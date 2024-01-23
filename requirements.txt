@@ -1,9 +1,10 @@
 asgiref==3.7.2
 Django==5.0.1
-django-cked==2.0.2
-django-ckeditor==6.7.0
+django-colorfield==0.11.0
 django-jazzmin==2.6.0
 django-js-asset==2.2.0
 django-modeltranslation==0.18.11
+django-tinymce==3.6.1
+pillow==10.2.0
 sqlparse==0.4.4
 typing_extensions==4.9.0

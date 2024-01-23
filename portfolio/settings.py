@@ -52,7 +52,6 @@ INSTALLED_APPS = [
 ]
 
 
-
 TINYMCE_JS_URL = 'https://cdn.tiny.cloud/1/80e10vfohgb7x7zuvrs2gm3a7o30vl45hjewow722dlviyyj/tinymce/6/tinymce.min.js'
 TINYMCE_COMPRESSOR = False
 TINYMCE_DEFAULT_CONFIG = {

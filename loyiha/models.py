@@ -19,11 +19,12 @@ class Texnologiyalar(models.Model):
 
 class Loyiha(models.Model):
     name = models.CharField(verbose_name='Loyiha nomi: ', max_length=200, blank=False, null=False)
-    iframe = models.CharField(verbose_name='Video embeded: ', max_length=100, blank=True, null=True)
+    techno = models.ManyToManyField(Texnologiyalar, verbose_name="Ishlatilgan texnologiyalar: ", blank=False, null=False)
     content = tinymce_models.HTMLField(verbose_name="Barcha ma'lumotlar: ", blank=False, null=False)
     started_at = models.DateField(verbose_name='Boshlanish vaqti: ', null=False, blank=False)
     ended_at = models.DateField(verbose_name='Tugash vaqti: ', blank=True, null=True)
-    is_active = models.BooleanField(verbose_name='Hozirgi ish joyim: ', default=False)
+    link = models.URLField(verbose_name="Githubdagi linki: ", null=True, blank=True)
+    is_active = models.BooleanField(verbose_name='Hozirgi ishlab chiqarish jarayonida: ', default=False)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
