@@ -18,9 +18,8 @@ class Texnologiyalar(models.Model):
 
 
 class Loyiha(models.Model):
-    name = models.CharField(verbose_name='Tajriba nomi: ', max_length=200, blank=False, null=False)
-    center = models.CharField(verbose_name='Ishlagan joyi: ', max_length=100, blank=False, null=False)
-    # iframe = RichTextField(verbose_name='Qisqacha izoh: ', blank=False, null=False)
+    name = models.CharField(verbose_name='Loyiha nomi: ', max_length=200, blank=False, null=False)
+    iframe = models.CharField(verbose_name='Video embeded: ', blank=True, null=True)
     content = RichTextField(verbose_name="Barcha ma'lumotlar: ", blank=False, null=False)
     started_at = models.DateField(verbose_name='Boshlanish vaqti: ', null=False, blank=False)
     ended_at = models.DateField(verbose_name='Tugash vaqti: ', blank=True, null=True)
