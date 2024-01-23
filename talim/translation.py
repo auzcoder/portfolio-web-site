@@ -3,5 +3,5 @@ from modeltranslation.translator import TranslationOptions, register
 
 
 @register(Talim)
-class TajribaTranslation(TranslationOptions):
+class TalimTranslation(TranslationOptions):
     fields = ('name', 'course', 'content')

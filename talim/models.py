@@ -13,7 +13,7 @@ class Talim(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
 
     class Meta:
-        ordering = ['created_at']
+        ordering = ['-created_at']
         verbose_name_plural = 'Talim'
 
     def __str__(self):
