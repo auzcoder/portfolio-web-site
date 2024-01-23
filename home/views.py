@@ -6,9 +6,10 @@ from django.urls.base import resolve, reverse
 from django.urls.exceptions import Resolver404
 from django.utils import translation
 from tajriba.models import Tajriba
+from talim.models import Talim
 
 
-def set_languages(request, language):
+def set_language(request, language):
     for lang, _ in settings.LANGUAGES:
         translation.activate(lang)
         try:
@@ -29,12 +30,12 @@ def set_languages(request, language):
 
 def homepage(request):
 
-    tajriba = Tajriba.objects.filter(is_active=True).order_by('-created_at' and 'started_at')
-    tajriba_old = Tajriba.objects.filter(is_active=False).order_by('-created_at' and 'started_at' and '-ended_at')
+    tajriba = Tajriba.objects.all().order_by('-created_at' and 'started_at' and 'ended_at')
+    talim = Tajriba.objects.all().order_by('-created_at' and 'started_at' and 'ended_at')
 
     context = {
         'tajriba': tajriba,
-        'tajriba_old': tajriba_old,
+        'talim': talim,
     }
 
     return render(request, 'core/index.html', context)

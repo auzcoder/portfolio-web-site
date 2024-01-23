@@ -62,7 +62,7 @@
                         <li class="nav-item">
                             <a class="nav-link" href="seminars/index.html">Seminars</a>
                         </li>
-                        
+
                         <li class="nav-item">
                             <a class="nav-link" href="#testimonial">Haqida</a>
                         </li>
@@ -81,11 +81,11 @@
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton"
                                      style="background-color: #181A1B;margin:0;min-width:8rem">
 
-                                    <a class="dropdown-item" style="padding-left: 15px" href="{% url 'set-lang' 'uz' %}">
+                                    <a class="dropdown-item" style="padding-left: 15px" href="{% url 'set-language' 'uz' %}">
                                         <img src="../static/assets/img/tr_flag.png" width="22" height="17px" alt="tr_flag_image">
                                         O'zbek
                                     </a>
-                                    <a class="dropdown-item" style="padding-left: 15px" href="{% url 'set-lang' 'en' %}">
+                                    <a class="dropdown-item" style="padding-left: 15px" href="{% url 'set-language' 'en' %}">
                                         <img src="../static/assets/img/en_flag.png" width="22" height="17" alt="en_flag_image">
                                         English
                                     </a>
@@ -256,57 +256,84 @@
                         <div class="timeline-boxes">
 
                             {% for i in tajriba %}
-                                <div class="timeline-boxe">
-                                    <div class="timeline-icon"></div>
-                                    <div class="timeline-contents">
-                                        <div class="time-line-header">
-                                            <h6 class="timeline-title">{{ i.name }}</h6>
-                                            <p class="timeline-year">
-                                                {{ i.started_at | date:'m.Y' }} -
-                                                {% if not i.ended_at == None %}
-                                                    {{ i.ended_at | date:'m.Y' }}
-                                                {% else %}
-                                                    Hozirda
-                                                {% endif %}
-                                            </p>
-                                            <p class="timeline-year" style="background-color: #19b400">
-                                                {{ i.center }}
-                                            </p>
-                                        </div>
-                                        <div class="timeline-content">
-                                            <p class="mb-0">
-                                                {{ i.content | safe }}
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            {% endfor %}
-                            {% for i in tajriba_old %}
-                                <div class="timeline-boxe">
-                                    <div class="timeline-icon"></div>
-                                    <div class="timeline-contents">
-                                        <div class="time-line-header">
-                                            <h6 class="timeline-title">{{ i.name }}</h6>
-                                            <p class="timeline-year">
-                                                {{ i.started_at | date:'m.Y' }} -
-                                                {% if not i.ended_at == None %}
-                                                    {{ i.ended_at | date:'m.Y' }}
-                                                {% else %}
-                                                    Hozirda
-                                                {% endif %}
-                                            </p>
-                                            <p class="timeline-year" style="background-color: #19b400">
-                                                {{ i.center }}
-                                            </p>
-                                        </div>
-                                        <div class="timeline-content">
-                                            <p class="mb-0">
-                                                {{ i.content | safe }}
-                                            </p>
+                                {% if i.is_active == True %}
+                                    <div class="timeline-boxe">
+                                        <div class="timeline-icon"></div>
+                                        <div class="timeline-contents">
+                                            <div class="time-line-header">
+                                                <h6 class="timeline-title">{{ i.name }}</h6>
+                                                <p class="timeline-year">
+                                                    {{ i.started_at | date:'m.Y' }} -
+                                                    {% if not i.ended_at == None %}
+                                                        {{ i.ended_at | date:'m.Y' }}
+                                                    {% else %}
+                                                        Hozirda
+                                                    {% endif %}
+                                                </p>
+                                                <p class="timeline-year" style="background-color: #19b400">
+                                                    {{ i.center }}
+                                                </p>
+                                            </div>
+                                            <div class="timeline-content">
+                                                <p class="mb-0">
+                                                    {{ i.content | safe }}
+                                                </p>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
+                                {% else %}
+                                    <div class="timeline-boxe">
+                                        <div class="timeline-icon"></div>
+                                        <div class="timeline-contents">
+                                            <div class="time-line-header">
+                                                <h6 class="timeline-title">{{ i.name }}</h6>
+                                                <p class="timeline-year">
+                                                    {{ i.started_at | date:'m.Y' }} -
+                                                    {% if not i.ended_at == None %}
+                                                        {{ i.ended_at | date:'m.Y' }}
+                                                    {% else %}
+                                                        Hozirda
+                                                    {% endif %}
+                                                </p>
+                                                <p class="timeline-year" style="background-color: #19b400">
+                                                    {{ i.center }}
+                                                </p>
+                                            </div>
+                                            <div class="timeline-content">
+                                                <p class="mb-0">
+                                                    {{ i.content | safe }}
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                {% endif %}
                             {% endfor %}
+{#                            {% for i in tajriba_old %}#}
+{#                                <div class="timeline-boxe">#}
+{#                                    <div class="timeline-icon"></div>#}
+{#                                    <div class="timeline-contents">#}
+{#                                        <div class="time-line-header">#}
+{#                                            <h6 class="timeline-title">{{ i.name }}</h6>#}
+{#                                            <p class="timeline-year">#}
+{#                                                {{ i.started_at | date:'m.Y' }} -#}
+{#                                                {% if not i.ended_at == None %}#}
+{#                                                    {{ i.ended_at | date:'m.Y' }}#}
+{#                                                {% else %}#}
+{#                                                    Hozirda#}
+{#                                                {% endif %}#}
+{#                                            </p>#}
+{#                                            <p class="timeline-year" style="background-color: #19b400">#}
+{#                                                {{ i.center }}#}
+{#                                            </p>#}
+{#                                        </div>#}
+{#                                        <div class="timeline-content">#}
+{#                                            <p class="mb-0">#}
+{#                                                {{ i.content | safe }}#}
+{#                                            </p>#}
+{#                                        </div>#}
+{#                                    </div>#}
+{#                                </div>#}
+{#                            {% endfor %}#}
 
                         </div>
                     </div>
