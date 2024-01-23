@@ -1,3 +1,9 @@
 from django.db import models
 
-# Create your models here.
+
+class Tajriba(models.Model):
+    name = models.CharField(max_length=200, blank=False, null=False)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+    
+
