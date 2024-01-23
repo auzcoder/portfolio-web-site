@@ -1,3 +1,5 @@
+from datetime import datetime, timedelta
+
 from django.db import models
 # from cked.fields import RichTextField
 
@@ -8,9 +10,21 @@ class Tajriba(models.Model):
     content = models.TextField(verbose_name='Qisqacha izoh: ', blank=False, null=False)
     started_at = models.DateField(verbose_name='Boshlanish vaqti: ', null=False, blank=False)
     ended_at = models.DateField(verbose_name='Tugash vaqti: ', blank=True, null=True)
-    active = models.BooleanField(verbose_name='Hozirgi ish joyim: ', default=False)
+    is_active = models.BooleanField(verbose_name='Hozirgi ish joyim: ', default=False)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+
+    # def get_display_ended_at(self):
+    #     if self.ended_at:
+    #         return self.ended_at
+    #     else:
+    #         return datetime.now().date()
+    def get_display_ended_at(self):
+        if self.ended_at and self.ended_at > self.started_at:
+            return self.ended_at
+        else:
+            ended_at_estimate = self.started_at + timedelta(days=365 * 2)
+            return ended_at_estimate
 
     class Meta:
         ordering = ['created_at']

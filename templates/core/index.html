@@ -62,12 +62,11 @@
                         <li class="nav-item">
                             <a class="nav-link" href="seminars/index.html">Seminars</a>
                         </li>
+                        
                         <li class="nav-item">
-
-                            <a class="nav-link"
-                               href="index.html#testimonial">Haqida</a>
-
+                            <a class="nav-link" href="#testimonial">Haqida</a>
                         </li>
+
                         <li class="nav-item" style="padding: 5px;margin:0;">
                             <div class="dropdown">
                                 <button class="btn btn-secondary btn-sm dropdown-toggle " style="padding: 5px;margin:0;"
@@ -132,12 +131,12 @@
 
                                         <li class="list-inline-item">
                                             <a href="https://github.com/auzcoder" target="_blank">
-                                                <img src="../static/assets/img/github.svg" alt="/">
+                                                <img src="{% static 'assets/img/github.svg' %}" alt="/">
                                             </a>
                                         </li>
                                         <li class="list-inline-item">
                                             <a href="https://www.linkedin.com/in/auzcoder/" target="_blank">
-                                                <img src="../static/assets/img/linkedin.svg" alt="/">
+                                                <img src="{% static 'assets/img/linkedin.svg' %}" alt="/">
                                             </a>
                                         </li>
 
@@ -251,128 +250,63 @@
                 <div class="row mt-5">
                     <div class="col-md-6">
                         <h5 class="title-resume">
-                            <img src="../static/assets/img/reading.svg" alt="/">
+                            <img src="{% static 'assets/img/reading.svg' %}" alt="/">
                             Tajriba
                         </h5>
                         <div class="timeline-boxes">
 
-                            <div class="timeline-boxe">
-                                <div class="timeline-icon"></div>
-                                <div class="timeline-contents">
-                                    <div class="time-line-header">
-                                        <h6 class="timeline-title">Software Engineer ( Django )</h6>
-                                        <p class="timeline-year">1.2022 - Currently</p>
-                                        <p class="timeline-year" style="background-color: #de1b00">Total:
-
-                                            2 Year
-
-
-                                        </p>
-                                        <p class="timeline-year" style="background-color: #19b400">Coderspace</p>
-                                    </div>
-                                    <div class="timeline-content">
-                                        <p class="mb-0">I am working on the development of 3 different web applications
-                                            using technologies such as Django, Rest Framework, Celery, Redis,
-                                            PostgreSQL.</p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="timeline-boxe">
-                                <div class="timeline-icon"></div>
-                                <div class="timeline-contents">
-                                    <div class="time-line-header">
-                                        <h6 class="timeline-title">Software Engineer ( Django )</h6>
-                                        <p class="timeline-year">6.2022 - 8.2022</p>
-                                        <p class="timeline-year" style="background-color: #de1b00">Total:
-
-
-                                            2 Month
-
-
-                                        </p>
-                                        <p class="timeline-year" style="background-color: #19b400">Prodaft</p>
-                                    </div>
-                                    <div class="timeline-content">
-                                        <p class="mb-0">I worked in Software Engineering by taking regular intensive
-                                            trainings in technologies such as Django, Rest Framework (DRF), Docker,
-                                            Celery, Redis, PostgreSQL and developing projects in line with these
-                                            trainings.</p>
+                            {% for i in tajriba %}
+                                <div class="timeline-boxe">
+                                    <div class="timeline-icon"></div>
+                                    <div class="timeline-contents">
+                                        <div class="time-line-header">
+                                            <h6 class="timeline-title">{{ i.name }}</h6>
+                                            <p class="timeline-year">
+                                                {{ i.started_at | date:'m.Y' }} -
+                                                {% if not i.ended_at == None %}
+                                                    {{ i.ended_at | date:'m.Y' }}
+                                                {% else %}
+                                                    Hozirda
+                                                {% endif %}
+                                            </p>
+                                            <p class="timeline-year" style="background-color: #19b400">
+                                                {{ i.center }}
+                                            </p>
+                                        </div>
+                                        <div class="timeline-content">
+                                            <p class="mb-0">
+                                                {{ i.content | safe }}
+                                            </p>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-
-                            <div class="timeline-boxe">
-                                <div class="timeline-icon"></div>
-                                <div class="timeline-contents">
-                                    <div class="time-line-header">
-                                        <h6 class="timeline-title">Back-end Developer ( Django )</h6>
-                                        <p class="timeline-year">2.2022 - 5.2022</p>
-                                        <p class="timeline-year" style="background-color: #de1b00">Total:
-
-
-                                            3 Month
-
-
-                                        </p>
-                                        <p class="timeline-year" style="background-color: #19b400">Novumare
-                                            Technologies</p>
-                                    </div>
-                                    <div class="timeline-content">
-                                        <p class="mb-0">I worked in the field of Back-end developer with Django and
-                                            Javascript at Novumare Technologies Company.</p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="timeline-boxe">
-                                <div class="timeline-icon"></div>
-                                <div class="timeline-contents">
-                                    <div class="time-line-header">
-                                        <h6 class="timeline-title">Penetration Tester</h6>
-                                        <p class="timeline-year">10.2021 - 6.2022</p>
-                                        <p class="timeline-year" style="background-color: #de1b00">Total:
-
-
-                                            8 Month
-
-
-                                        </p>
-                                        <p class="timeline-year" style="background-color: #19b400">Yalova University IT
-                                            Department</p>
-                                    </div>
-                                    <div class="timeline-content">
-                                        <p class="mb-0">I took part in the necessary penetration tests of the servers of
-                                            the university, the detection of security vulnerabilities and the reporting
-                                            of the security vulnerabilities found at Yalova University Computer
-                                            Center.</p>
+                            {% endfor %}
+                            {% for i in tajriba_old %}
+                                <div class="timeline-boxe">
+                                    <div class="timeline-icon"></div>
+                                    <div class="timeline-contents">
+                                        <div class="time-line-header">
+                                            <h6 class="timeline-title">{{ i.name }}</h6>
+                                            <p class="timeline-year">
+                                                {{ i.started_at | date:'m.Y' }} -
+                                                {% if not i.ended_at == None %}
+                                                    {{ i.ended_at | date:'m.Y' }}
+                                                {% else %}
+                                                    Hozirda
+                                                {% endif %}
+                                            </p>
+                                            <p class="timeline-year" style="background-color: #19b400">
+                                                {{ i.center }}
+                                            </p>
+                                        </div>
+                                        <div class="timeline-content">
+                                            <p class="mb-0">
+                                                {{ i.content | safe }}
+                                            </p>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-
-                            <div class="timeline-boxe">
-                                <div class="timeline-icon"></div>
-                                <div class="timeline-contents">
-                                    <div class="time-line-header">
-                                        <h6 class="timeline-title">Software and Cyber ​​Security Trainer</h6>
-                                        <p class="timeline-year">9.2021 - 6.2022</p>
-                                        <p class="timeline-year" style="background-color: #de1b00">Total:
-
-
-                                            9 Month
-
-
-                                        </p>
-                                        <p class="timeline-year" style="background-color: #19b400">Yalova University</p>
-                                    </div>
-                                    <div class="timeline-content">
-                                        <p class="mb-0">At Yalova University Cyber ​​Security Club, I gave weekly,
-                                            face-to-face, theoretical and practical cyber security (Infiltration tests,
-                                            security vulnerabilities, etc.) and software (SQL, Javascript, html, css,
-                                            relational databases, etc.) trainings to the participants.</p>
-                                    </div>
-                                </div>
-                            </div>
+                            {% endfor %}
 
                         </div>
                     </div>
