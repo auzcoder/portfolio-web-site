@@ -1,6 +1,7 @@
 from django.db import models
 from colorfield.fields import ColorField
 from tinymce import models as tinymce_models
+from pictures.models import PictureField
 
 
 class Texnologiyalar(models.Model):
@@ -21,6 +22,7 @@ class Loyiha(models.Model):
     name = models.CharField(verbose_name='Loyiha nomi: ', max_length=200, blank=False, null=False)
     techno = models.ManyToManyField(Texnologiyalar, verbose_name="Texnologiyalar", blank=False)
     content = tinymce_models.HTMLField(verbose_name="Barcha ma'lumotlar: ", blank=False, null=False)
+    image = models.ImageField(verbose_name="Post rasmi", blank=True, null=True)
     started_at = models.DateField(verbose_name='Boshlanish vaqti: ', null=False, blank=False)
     ended_at = models.DateField(verbose_name='Tugash vaqti: ', blank=True, null=True)
     link = models.URLField(verbose_name="Githubdagi linki: ", null=True, blank=True)
