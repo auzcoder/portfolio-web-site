@@ -19,7 +19,7 @@ class Texnologiyalar(models.Model):
 
 class Loyiha(models.Model):
     name = models.CharField(verbose_name='Loyiha nomi: ', max_length=200, blank=False, null=False)
-    techno = models.ManyToManyField(Texnologiyalar, verbose_name="Ishlatilgan texnologiyalar: ", blank=False, null=False)
+    techno = models.ManyToManyField(Texnologiyalar, verbose_name="Texnologiyalar", blank=False)
     content = tinymce_models.HTMLField(verbose_name="Barcha ma'lumotlar: ", blank=False, null=False)
     started_at = models.DateField(verbose_name='Boshlanish vaqti: ', null=False, blank=False)
     ended_at = models.DateField(verbose_name='Tugash vaqti: ', blank=True, null=True)
