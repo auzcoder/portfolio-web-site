@@ -38,10 +38,22 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    # My apps
     'home',
     'talim',
     'tajriba',
+
+    # External apps
+    'cked',
+    'ckeditor',
 ]
+
+ELFINDER_OPTIONS = {
+    'root': os.path.join(BASE_DIR, 'media', 'uploads'),
+    'URL': '/media/uploads/',
+}
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
