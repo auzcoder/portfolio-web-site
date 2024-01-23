@@ -258,7 +258,7 @@
                             {% for i in tajriba %}
                                 {% if i.is_active == True %}
                                     <div class="timeline-boxe">
-                                        <div class="timeline-icon"></div>
+                                        <div class="timeline-icon" style="background-color: #0cc919; border: 1px solid #0cc919 "></div>
                                         <div class="timeline-contents">
                                             <div class="time-line-header">
                                                 <h6 class="timeline-title">{{ i.name }}</h6>
@@ -308,32 +308,6 @@
                                     </div>
                                 {% endif %}
                             {% endfor %}
-{#                            {% for i in tajriba_old %}#}
-{#                                <div class="timeline-boxe">#}
-{#                                    <div class="timeline-icon"></div>#}
-{#                                    <div class="timeline-contents">#}
-{#                                        <div class="time-line-header">#}
-{#                                            <h6 class="timeline-title">{{ i.name }}</h6>#}
-{#                                            <p class="timeline-year">#}
-{#                                                {{ i.started_at | date:'m.Y' }} -#}
-{#                                                {% if not i.ended_at == None %}#}
-{#                                                    {{ i.ended_at | date:'m.Y' }}#}
-{#                                                {% else %}#}
-{#                                                    Hozirda#}
-{#                                                {% endif %}#}
-{#                                            </p>#}
-{#                                            <p class="timeline-year" style="background-color: #19b400">#}
-{#                                                {{ i.center }}#}
-{#                                            </p>#}
-{#                                        </div>#}
-{#                                        <div class="timeline-content">#}
-{#                                            <p class="mb-0">#}
-{#                                                {{ i.content | safe }}#}
-{#                                            </p>#}
-{#                                        </div>#}
-{#                                    </div>#}
-{#                                </div>#}
-{#                            {% endfor %}#}
 
                         </div>
                     </div>
@@ -343,23 +317,27 @@
                             Ta'lim
                         </h5>
                         <div class="timeline-boxes">
+                            {% for i in tajriba %}
+                                {% if i.is_active == True %}
 
-                            <div class="timeline-boxe">
-                                <div class="timeline-icon"></div>
-                                <div class="timeline-contents">
-                                    <div class="time-line-header">
-                                        <h6 class="timeline-title">Gümüşpala Vocational and Technical Anatolian High
-                                            School</h6>
-                                        <p class="timeline-year">2015 - 2019</p>
+                                <div class="timeline-boxe">
+                                    <div class="timeline-icon"></div>
+                                    <div class="timeline-contents">
+                                        <div class="time-line-header">
+                                            <h6 class="timeline-title">Gümüşpala Vocational and Technical Anatolian High
+                                                School</h6>
+                                            <p class="timeline-year">2015 - 2019</p>
 
-                                    </div>
-                                    <div class="timeline-content">
-                                        <p class="mb-0">After completing my education and training for 4 years at
-                                            Gümüşpala Vocational and Technical Anatolian High School, I graduated in
-                                            2019.</p>
+                                        </div>
+                                        <div class="timeline-content">
+                                            <p class="mb-0">After completing my education and training for 4 years at
+                                                Gümüşpala Vocational and Technical Anatolian High School, I graduated in
+                                                2019.</p>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
+                                {% endif %}
+                            {% endfor %}
 
                             <div class="timeline-boxe">
                                 <div class="timeline-icon"></div>
