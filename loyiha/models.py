@@ -1,6 +1,6 @@
 from django.db import models
 from colorfield.fields import ColorField
-from cked.fields import RichTextField
+from tinymce import models as tinymce_models
 
 
 class Texnologiyalar(models.Model):
@@ -19,8 +19,8 @@ class Texnologiyalar(models.Model):
 
 class Loyiha(models.Model):
     name = models.CharField(verbose_name='Loyiha nomi: ', max_length=200, blank=False, null=False)
-    iframe = models.CharField(verbose_name='Video embeded: ', blank=True, null=True)
-    content = RichTextField(verbose_name="Barcha ma'lumotlar: ", blank=False, null=False)
+    iframe = models.CharField(verbose_name='Video embeded: ', max_length=100, blank=True, null=True)
+    content = tinymce_models.HTMLField(verbose_name="Barcha ma'lumotlar: ", blank=False, null=False)
     started_at = models.DateField(verbose_name='Boshlanish vaqti: ', null=False, blank=False)
     ended_at = models.DateField(verbose_name='Tugash vaqti: ', blank=True, null=True)
     is_active = models.BooleanField(verbose_name='Hozirgi ish joyim: ', default=False)
