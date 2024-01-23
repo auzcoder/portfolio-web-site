@@ -11,7 +11,7 @@ def homepage(request):
     return render(request, 'index.html')
 
 
-def set_language(request, language):
+def set_languages(request, language):
     for lang, _ in settings.LANGUAGES:
         translation.activate(lang)
         try:
