@@ -6,7 +6,7 @@ from tajriba.models import Tajriba
 
 @admin.register(Tajriba)
 class TajribaAdmin(TranslationAdmin):
-    list_display = ['name', 'started_at', 'ended_at', 'position']
+    list_display = ['name', 'started_at', 'ended_at', 'center']
 
     class Media:
         js = (

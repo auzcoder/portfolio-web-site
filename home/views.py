@@ -5,10 +5,7 @@ from django.http import HttpResponseRedirect
 from django.urls.base import resolve, reverse
 from django.urls.exceptions import Resolver404
 from django.utils import translation
-
-
-def homepage(request):
-    return render(request, 'index.html')
+from tajriba.models import Tajriba
 
 
 def set_languages(request, language):
@@ -28,5 +25,12 @@ def set_languages(request, language):
     else:
         response = HttpResponseRedirect("/")
     return response
+
+
+def homepage(request):
+    tajriba = Tajriba.objects.all().order_by('-created_at')
+    return render(request, 'core/index.html')
+
+
 
 
