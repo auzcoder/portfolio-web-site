@@ -7,7 +7,10 @@ from home.views import set_language
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("language/<str:language>", set_language, name="set-language"),
-    path('', include('home.urls'))
+    path('', include('home.urls')),
+    # path('ckeditor/', include('ckeditor_uploader.urls')),
+    path('cked/', include('cked.urls')),
+
 ]
 
 
