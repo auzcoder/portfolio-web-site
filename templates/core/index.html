@@ -258,7 +258,7 @@
                             {% for i in tajriba %}
                                 {% if i.is_active == True %}
                                     <div class="timeline-boxe">
-                                        <div class="timeline-icon" style="background-color: #0cc919; border: 1px solid #0cc919 "></div>
+                                        <div class="timeline-icon" style="background-color: #0cc919; border: 1px solid #0cc919"></div>
                                         <div class="timeline-contents">
                                             <div class="time-line-header">
                                                 <h6 class="timeline-title">{{ i.name }}</h6>
@@ -319,43 +319,61 @@
                         <div class="timeline-boxes">
                             {% for i in talim %}
                                 {% if i.is_active == True %}
+                                    <div class="timeline-boxe">
+                                        <div class="timeline-icon" style="background-color: #0cc919; border: 1px solid #0cc919"></div>
+                                        <div class="timeline-contents">
+                                            <div class="time-line-header">
+                                                <h6 class="timeline-title">{{ i.name }}</h6>
+                                                <p class="timeline-year">
+                                                    {{ i.started_at | date:'m.Y' }} -
+                                                    {% if not i.ended_at == None %}
+                                                        {{ i.ended_at | date:'m.Y' }}
+                                                    {% else %}
+                                                        Hozirda
+                                                    {% endif %}
+                                                </p>
 
-                                <div class="timeline-boxe">
-                                    <div class="timeline-icon"></div>
-                                    <div class="timeline-contents">
-                                        <div class="time-line-header">
-                                            <h6 class="timeline-title">Gümüşpala Vocational and Technical Anatolian High
-                                                School</h6>
-                                            <p class="timeline-year">2015 - 2019</p>
+                                                <p class="timeline-year" style="background-color: #008187">
+                                                    {{ i.course }}
+                                                </p>
 
-                                        </div>
-                                        <div class="timeline-content">
-                                            <p class="mb-0">After completing my education and training for 4 years at
-                                                Gümüşpala Vocational and Technical Anatolian High School, I graduated in
-                                                2019.</p>
+                                            </div>
+                                            <div class="timeline-content">
+                                                <p class="mb-0">
+                                                    {{ i.content }}
+                                                </p>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
+                                {% else %}
+                                    <div class="timeline-boxe">
+                                        <div class="timeline-icon"></div>
+                                        <div class="timeline-contents">
+                                            <div class="time-line-header">
+                                                <h6 class="timeline-title">{{ i.name }}</h6>
+                                                <p class="timeline-year">
+                                                    {{ i.started_at | date:'m.Y' }} -
+                                                    {% if not i.ended_at == None %}
+                                                        {{ i.ended_at | date:'m.Y' }}
+                                                    {% else %}
+                                                        Hozirda
+                                                    {% endif %}
+                                                </p>
+
+                                                <p class="timeline-year" style="background-color: #008187">
+                                                    {{ i.course }}
+                                                </p>
+
+                                            </div>
+                                            <div class="timeline-content">
+                                                <p class="mb-0">
+                                                    {{ i.content }}
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
                                 {% endif %}
                             {% endfor %}
-
-                            <div class="timeline-boxe">
-                                <div class="timeline-icon"></div>
-                                <div class="timeline-contents">
-                                    <div class="time-line-header">
-                                        <h6 class="timeline-title">Yalova University</h6>
-                                        <p class="timeline-year">2020 - 2022</p>
-
-                                        <p class="timeline-year"
-                                           style="background-color: #008187">Computer Programming</p>
-
-                                    </div>
-                                    <div class="timeline-content">
-                                        <p class="mb-0">I continue my education and training life in Yalova University
-                                            Computer Programming department with an average grade of 3.66/4.00.</p>
-                                    </div>
-                                </div>
-                            </div>
 
                         </div>
                     </div>

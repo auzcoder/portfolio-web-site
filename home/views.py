@@ -31,7 +31,7 @@ def set_language(request, language):
 def homepage(request):
 
     tajriba = Tajriba.objects.all().order_by('-created_at' and 'ended_at')
-    talim = Tajriba.objects.all().order_by('-created_at' and 'ended_at')
+    talim = Talim.objects.all().order_by('-created_at' and 'ended_at')
 
     context = {
         'tajriba': tajriba,
