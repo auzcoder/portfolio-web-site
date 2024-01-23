@@ -45,10 +45,12 @@ INSTALLED_APPS = [
     'home',
     'talim',
     'tajriba',
+    'loyiha',
 
     # External apps
     'cked',
     'ckeditor',
+    'colorfield',
 ]
 
 ELFINDER_OPTIONS = {
