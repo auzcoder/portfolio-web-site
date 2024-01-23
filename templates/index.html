@@ -1,10 +1,7 @@
 {% load static %}
 <!doctype html>
 <html lang="uz">
-
-<!-- Mirrored from berkaysen.me/en/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 22 Jan 2024 08:38:21 GMT -->
-<!-- Added by HTTrack -->
-<meta http-equiv="content-type" content="text/html;charset=utf-8"/><!-- /Added by HTTrack -->
+<meta http-equiv="content-type" content="text/html;charset=utf-8"/>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
@@ -20,15 +17,14 @@
           rel="stylesheet">
     <link rel="stylesheet" href="{% static 'assets/css/bootstrap.css' %}">
     <link rel="stylesheet" href="{% static 'assets/css/fontawesome.css' %}">
-    <link rel="stylesheet" href="../static/assets/css/LineIcons.css">
-    <link rel="stylesheet" href="../static/assets/css/owl.carousel.min.css">
-    <link rel="stylesheet" href="../static/assets/css/magnific-popup.css">
-    <link rel="stylesheet" href="../static/assets/css/main.css">
-    <link rel="stylesheet" href="../static/assets/css/color/sky-blue.css" id="option-color-two">
-    <link rel="stylesheet" href="../static/assets/css/colorfull.css">
+    <link rel="stylesheet" href="{% static 'assets/css/LineIcons.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/magnific-popup.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/main.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/color/sky-blue.css' %}" id="option-color-two">
+    <link rel="stylesheet" href="{% static 'assets/css/colorfull.css' %}">
+
     <title>Auzcoder</title>
-
-
 </head>
 <body>
 
@@ -39,7 +35,7 @@
     <header id="header" class="header fixed-top">
         <nav id="scrollspy" class="navbar navbar-expand-lg header-nav">
             <div class="container">
-                <a class="navbar-brand base-color" href="#">Abdulhafiz Davlatov</a>
+                <a class="navbar-brand base-color" href="{% url 'home' %}">Abdulhafiz Davlatov</a>
                 <button class="navbar-toggler collapsed " type="button" data-toggle="collapse"
                         data-target="#toggle-menu"
                         aria-controls="toggle-menu" aria-expanded="false" aria-label="Toggle navigation">
