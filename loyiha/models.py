@@ -22,7 +22,7 @@ class Loyiha(models.Model):
     description = models.CharField(verbose_name="Qisqa izoh: ", max_length=500, blank=False, null=False)
     techno = models.ManyToManyField(Texnologiyalar, verbose_name="Texnologiyalar", blank=False)
     content = tinymce_models.HTMLField(verbose_name="Barcha ma'lumotlar: ", blank=False, null=False)
-    image = models.ImageField(verbose_name="Post rasmi", blank=True, null=True, upload_to='media/Loyiha')
+    image = models.ImageField(verbose_name="Post rasmi", blank=True, null=True, upload_to='Loyiha/')
     started_at = models.DateField(verbose_name='Boshlanish vaqti: ', null=False, blank=False)
     ended_at = models.DateField(verbose_name='Tugash vaqti: ', blank=True, null=True)
     link = models.URLField(verbose_name="Githubdagi linki: ", null=True, blank=True)

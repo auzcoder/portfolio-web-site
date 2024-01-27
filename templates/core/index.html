@@ -391,7 +391,8 @@
                     <div class="title-box-03">
                         <h2 class="title-header">Loyihalar</h2>
                         <p>Men ishlab chiqqan yirik loyihalarimga shu yerda kirishingiz mumkin. Tafsilotlar uchun
-                            loyihani bosing.</p>
+                            loyihani bosing.
+                        </p>
                     </div>
                 </div>
             </div>
@@ -402,8 +403,7 @@
                         <div class="blog-item" style="max-height: 530px;min-height: 530px">
                             <a href="projects/django-e-commerce-system/index.html">
                                 <div class="image-blog">
-                                    <img src="{{ i.image.url }}"
-                                         alt="/">
+                                    <img src="{{ i.image.url }}" alt="/" width="100%" height="176px">
                                 </div>
                             </a>
                             <div class="blog-box">
@@ -412,9 +412,6 @@
                                 </div>
                                 <h5 class="Blog-title mb-0 text-center"><a href="#">{{ i.name }}</a></h5>
                                 <div align="center">
-{#                                    <span class="badge badge-danger">Python</span>#}
-{#                                    <span class="badge badge-primary">Django</span>#}
-{#                                    <span class="badge badge-warning">PostgreSQL</span>#}
                                     {% for tech in i.techno.all %}
                                         <span class="badge" style="background-color: {{ tech.color }}">{{ tech.name }}</span>
                                     {% endfor %}
