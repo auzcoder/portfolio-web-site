@@ -1,7 +1,6 @@
 from django.db import models
 from colorfield.fields import ColorField
 from tinymce import models as tinymce_models
-from pictures.models import PictureField
 
 
 class Texnologiyalar(models.Model):
