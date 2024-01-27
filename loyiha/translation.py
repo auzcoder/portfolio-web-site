@@ -4,4 +4,4 @@ from modeltranslation.translator import TranslationOptions, register
 
 @register(Loyiha)
 class TalimTranslation(TranslationOptions):
-    fields = ('name', 'content')
+    fields = ('name', 'description', 'content')

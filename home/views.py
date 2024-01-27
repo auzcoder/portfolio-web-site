@@ -7,6 +7,7 @@ from django.urls.exceptions import Resolver404
 from django.utils import translation
 from tajriba.models import Tajriba
 from talim.models import Talim
+from loyiha.models import Loyiha
 
 
 def set_language(request, language):
@@ -32,10 +33,12 @@ def homepage(request):
 
     tajriba = Tajriba.objects.all().order_by('-created_at' and 'ended_at')
     talim = Talim.objects.all().order_by('-created_at' and 'ended_at')
+    loyiha = Loyiha.objects.all().order_by('-created_at')
 
     context = {
         'tajriba': tajriba,
         'talim': talim,
+        'loyiha': loyiha,
     }
 
     return render(request, 'core/index.html', context)

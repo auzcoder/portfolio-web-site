@@ -397,114 +397,116 @@
             </div>
             <div class="row mt-4">
 
-                <div class="col-md-6 col-lg-4 infinite-item">
-                    <div class="blog-item" style="max-height: 530px;min-height: 530px">
-                        <a href="projects/django-e-commerce-system/index.html">
-                            <div class="image-blog">
-                                <img src="https://brktrl.s3.eu-central-1.amazonaws.com/projects/Django+E+TRADE+SYSTEM+(3).png"
-                                     alt="/">
+                {% for i in loyiha %}
+                    <div class="col-md-6 col-lg-4 infinite-item">
+                        <div class="blog-item" style="max-height: 530px;min-height: 530px">
+                            <a href="projects/django-e-commerce-system/index.html">
+                                <div class="image-blog">
+                                    <img src="https://brktrl.s3.eu-central-1.amazonaws.com/projects/Django+E+TRADE+SYSTEM+(3).png"
+                                         alt="/">
+                                </div>
+                            </a>
+                            <div class="blog-box">
+                                <div class="blog-time text-center badge-success m-2" style="border-radius: 10px">Nov. 2,
+                                    2021
+                                </div>
+                                <h5 class="Blog-title mb-0 text-center"><a href="#">Django E-Commerce System</a></h5>
+                                <div align="center">
+                                    <span class="badge badge-danger">Python</span>
+                                    <span class="badge badge-primary">Django</span>
+                                    <span class="badge badge-warning">PostgreSQL</span>
+                                </div>
+                                <p class="mb-0 text-center">An e-commerce system that I developed using Python Django and
+                                    Postgresql technologies.</p>
+                                <div class="blog-link">
+                                </div>
                             </div>
-                        </a>
-                        <div class="blog-box">
-                            <div class="blog-time text-center badge-success m-2" style="border-radius: 10px">Nov. 2,
-                                2021
-                            </div>
-                            <h5 class="Blog-title mb-0 text-center"><a href="#">Django E-Commerce System</a></h5>
                             <div align="center">
-                                <span class="badge badge-danger">Python</span>
-                                <span class="badge badge-primary">Django</span>
-                                <span class="badge badge-warning">PostgreSQL</span>
+                                <a href="projects/django-e-commerce-system/index.html" class="btn btn-outline-danger mt-3">Details</a>
                             </div>
-                            <p class="mb-0 text-center">An e-commerce system that I developed using Python Django and
-                                Postgresql technologies.</p>
-                            <div class="blog-link">
-                            </div>
-                        </div>
-                        <div align="center">
-                            <a href="projects/django-e-commerce-system/index.html" class="btn btn-outline-danger mt-3">Details</a>
                         </div>
                     </div>
-                </div>
+                {% endfor %}
 
-                <div class="col-md-6 col-lg-4 infinite-item">
-                    <div class="blog-item" style="max-height: 530px;min-height: 530px">
-                        <a href="projects/django-instagram-clone/index.html">
-                            <div class="image-blog">
-                                <img src="https://brktrl.s3.eu-central-1.amazonaws.com/projects/Django+E+TRADE+SYSTEM+(1).png"
-                                     alt="/">
-                            </div>
-                        </a>
-                        <div class="blog-box">
-                            <div class="blog-time text-center badge-success m-2" style="border-radius: 10px">Feb. 14,
-                                2022
-                            </div>
-                            <h5 class="Blog-title mb-0 text-center"><a href="#">Django Instagram Clone</a></h5>
-                            <div align="center">
-
-
-                                <span class="badge badge-danger">Python</span>
-
-
-                                <span class="badge badge-primary">Django</span>
-
-
-                                <span class="badge badge-warning">Rest Framework</span>
-
-
-                                <span class="badge badge-success">React Native</span>
-
-
-                                <span class="badge badge-info">PostgreSQL</span>
-
-
-                            </div>
-                            <p class="mb-0 text-center">Instagram Clone Mobile Application that we developed using
-                                Django Rest Framework and React Native</p>
-                            <div class="blog-link">
-                            </div>
-                        </div>
-                        <div align="center">
-                            <a href="projects/django-instagram-clone/index.html" class="btn btn-outline-danger mt-3">Details</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-6 col-lg-4 infinite-item">
-                    <div class="blog-item" style="max-height: 530px;min-height: 530px">
-                        <a href="projects/django-e-trade-web-app/index.html">
-                            <div class="image-blog">
-                                <img src="https://brktrl.s3.eu-central-1.amazonaws.com/projects/Django+E+TRADE+SYSTEM+(2).png"
-                                     alt="/">
-                            </div>
-                        </a>
-                        <div class="blog-box">
-                            <div class="blog-time text-center badge-success m-2" style="border-radius: 10px">March 13,
-                                2022
-                            </div>
-                            <h5 class="Blog-title mb-0 text-center"><a href="#">Django E-Commerce System - 2</a></h5>
-                            <div align="center">
-
-
-                                <span class="badge badge-danger">Python</span>
-
-
-                                <span class="badge badge-primary">Django</span>
-
-
-                                <span class="badge badge-warning">PostgreSQL</span>
-
-
-                            </div>
-                            <p class="mb-0 text-center">A comprehensive e-commerce system project developed using Python
-                                Django Framework.</p>
-                            <div class="blog-link">
-                            </div>
-                        </div>
-                        <div align="center">
-                            <a href="projects/django-e-trade-web-app/index.html" class="btn btn-outline-danger mt-3">Details</a>
-                        </div>
-                    </div>
-                </div>
+{#                <div class="col-md-6 col-lg-4 infinite-item">#}
+{#                    <div class="blog-item" style="max-height: 530px;min-height: 530px">#}
+{#                        <a href="projects/django-instagram-clone/index.html">#}
+{#                            <div class="image-blog">#}
+{#                                <img src="https://brktrl.s3.eu-central-1.amazonaws.com/projects/Django+E+TRADE+SYSTEM+(1).png"#}
+{#                                     alt="/">#}
+{#                            </div>#}
+{#                        </a>#}
+{#                        <div class="blog-box">#}
+{#                            <div class="blog-time text-center badge-success m-2" style="border-radius: 10px">Feb. 14,#}
+{#                                2022#}
+{#                            </div>#}
+{#                            <h5 class="Blog-title mb-0 text-center"><a href="#">Django Instagram Clone</a></h5>#}
+{#                            <div align="center">#}
+{##}
+{##}
+{#                                <span class="badge badge-danger">Python</span>#}
+{##}
+{##}
+{#                                <span class="badge badge-primary">Django</span>#}
+{##}
+{##}
+{#                                <span class="badge badge-warning">Rest Framework</span>#}
+{##}
+{##}
+{#                                <span class="badge badge-success">React Native</span>#}
+{##}
+{##}
+{#                                <span class="badge badge-info">PostgreSQL</span>#}
+{##}
+{##}
+{#                            </div>#}
+{#                            <p class="mb-0 text-center">Instagram Clone Mobile Application that we developed using#}
+{#                                Django Rest Framework and React Native</p>#}
+{#                            <div class="blog-link">#}
+{#                            </div>#}
+{#                        </div>#}
+{#                        <div align="center">#}
+{#                            <a href="projects/django-instagram-clone/index.html" class="btn btn-outline-danger mt-3">Details</a>#}
+{#                        </div>#}
+{#                    </div>#}
+{#                </div>#}
+{##}
+{#                <div class="col-md-6 col-lg-4 infinite-item">#}
+{#                    <div class="blog-item" style="max-height: 530px;min-height: 530px">#}
+{#                        <a href="projects/django-e-trade-web-app/index.html">#}
+{#                            <div class="image-blog">#}
+{#                                <img src="https://brktrl.s3.eu-central-1.amazonaws.com/projects/Django+E+TRADE+SYSTEM+(2).png"#}
+{#                                     alt="/">#}
+{#                            </div>#}
+{#                        </a>#}
+{#                        <div class="blog-box">#}
+{#                            <div class="blog-time text-center badge-success m-2" style="border-radius: 10px">March 13,#}
+{#                                2022#}
+{#                            </div>#}
+{#                            <h5 class="Blog-title mb-0 text-center"><a href="#">Django E-Commerce System - 2</a></h5>#}
+{#                            <div align="center">#}
+{##}
+{##}
+{#                                <span class="badge badge-danger">Python</span>#}
+{##}
+{##}
+{#                                <span class="badge badge-primary">Django</span>#}
+{##}
+{##}
+{#                                <span class="badge badge-warning">PostgreSQL</span>#}
+{##}
+{##}
+{#                            </div>#}
+{#                            <p class="mb-0 text-center">A comprehensive e-commerce system project developed using Python#}
+{#                                Django Framework.</p>#}
+{#                            <div class="blog-link">#}
+{#                            </div>#}
+{#                        </div>#}
+{#                        <div align="center">#}
+{#                            <a href="projects/django-e-trade-web-app/index.html" class="btn btn-outline-danger mt-3">Details</a>#}
+{#                        </div>#}
+{#                    </div>#}
+{#                </div>#}
 
             </div>
         </div>

@@ -19,6 +19,7 @@ class Texnologiyalar(models.Model):
 
 class Loyiha(models.Model):
     name = models.CharField(verbose_name='Loyiha nomi: ', max_length=200, blank=False, null=False)
+    description = models.CharField(verbose_name="Qisqa izoh: ", max_length=500, blank=False, null=False)
     techno = models.ManyToManyField(Texnologiyalar, verbose_name="Texnologiyalar", blank=False)
     content = tinymce_models.HTMLField(verbose_name="Barcha ma'lumotlar: ", blank=False, null=False)
     image = models.ImageField(verbose_name="Post rasmi", blank=True, null=True, upload_to='media/Loyiha')
