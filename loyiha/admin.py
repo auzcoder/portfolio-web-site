@@ -8,6 +8,7 @@ from loyiha.models import Loyiha, Texnologiyalar
 class TexnologiyalarAdmin(admin.ModelAdmin):
     list_display = ['name', 'created_at']
 
+
 @admin.register(Loyiha)
 class LoyihaAdmin(admin.ModelAdmin):
     list_display = ['name', 'created_at']
