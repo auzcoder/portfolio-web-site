@@ -33,7 +33,7 @@ def homepage(request):
 
     tajriba = Tajriba.objects.all().order_by('-created_at' and 'ended_at')
     talim = Talim.objects.all().order_by('-created_at' and 'ended_at')
-    loyiha = Loyiha.objects.all().order_by('-created_at')
+    loyiha = Loyiha.objects.all().order_by('-created_at')[:3]
 
     context = {
         'tajriba': tajriba,

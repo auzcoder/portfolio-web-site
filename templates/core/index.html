@@ -402,27 +402,31 @@
                         <div class="blog-item" style="max-height: 530px;min-height: 530px">
                             <a href="projects/django-e-commerce-system/index.html">
                                 <div class="image-blog">
-                                    <img src="https://brktrl.s3.eu-central-1.amazonaws.com/projects/Django+E+TRADE+SYSTEM+(3).png"
+                                    <img src="{{ i.image.url }}"
                                          alt="/">
                                 </div>
                             </a>
                             <div class="blog-box">
-                                <div class="blog-time text-center badge-success m-2" style="border-radius: 10px">Nov. 2,
-                                    2021
+                                <div class="blog-time text-center badge-success m-2" style="border-radius: 10px">
+                                    {{ i.started_at }}
                                 </div>
-                                <h5 class="Blog-title mb-0 text-center"><a href="#">Django E-Commerce System</a></h5>
+                                <h5 class="Blog-title mb-0 text-center"><a href="#">{{ i.name }}</a></h5>
                                 <div align="center">
-                                    <span class="badge badge-danger">Python</span>
-                                    <span class="badge badge-primary">Django</span>
-                                    <span class="badge badge-warning">PostgreSQL</span>
+{#                                    <span class="badge badge-danger">Python</span>#}
+{#                                    <span class="badge badge-primary">Django</span>#}
+{#                                    <span class="badge badge-warning">PostgreSQL</span>#}
+                                    {% for tech in i.techno.all %}
+                                        <span class="badge" style="background-color: {{ tech.color }}">{{ tech.name }}</span>
+                                    {% endfor %}
                                 </div>
-                                <p class="mb-0 text-center">An e-commerce system that I developed using Python Django and
-                                    Postgresql technologies.</p>
+                                <p class="mb-0 text-center mt-2">
+                                    {{ i.description }}
+                                </p>
                                 <div class="blog-link">
                                 </div>
                             </div>
                             <div align="center">
-                                <a href="projects/django-e-commerce-system/index.html" class="btn btn-outline-danger mt-3">Details</a>
+                                <a href="projects/django-e-commerce-system/index.html" class="btn btn-outline-danger mt-3">Tafsilotlar</a>
                             </div>
                         </div>
                     </div>
