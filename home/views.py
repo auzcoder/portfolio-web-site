@@ -8,6 +8,7 @@ from django.utils import translation
 from tajriba.models import Tajriba
 from talim.models import Talim
 from loyiha.models import Loyiha
+from sertifikat.models import Sertifikat
 
 
 def set_language(request, language):
@@ -34,11 +35,13 @@ def homepage(request):
     tajriba = Tajriba.objects.all().order_by('-created_at' and 'ended_at')
     talim = Talim.objects.all().order_by('-created_at' and 'ended_at')
     loyiha = Loyiha.objects.all().order_by('-created_at')[:3]
+    sertifikat = Sertifikat.objects.filter(is_active=True).order_by('-created_at')[:3]
 
     context = {
         'tajriba': tajriba,
         'talim': talim,
         'loyiha': loyiha,
+        'sertifikat': sertifikat,
     }
 
     return render(request, 'core/index.html', context)

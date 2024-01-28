@@ -171,6 +171,8 @@
                     <div class="col-lg-6">
                         <div id="skills">
 
+{#                            <span class="badge badge-primary">Django</span>#}
+
                             <div class="col-lg-12 skill-box">
                                 <div class="skillbar clearfix" data-percent="100%">
                                     <div class="skillbar-title"><span>Python</span></div>
@@ -429,86 +431,6 @@
                     </div>
                 {% endfor %}
 
-{#                <div class="col-md-6 col-lg-4 infinite-item">#}
-{#                    <div class="blog-item" style="max-height: 530px;min-height: 530px">#}
-{#                        <a href="projects/django-instagram-clone/index.html">#}
-{#                            <div class="image-blog">#}
-{#                                <img src="https://brktrl.s3.eu-central-1.amazonaws.com/projects/Django+E+TRADE+SYSTEM+(1).png"#}
-{#                                     alt="/">#}
-{#                            </div>#}
-{#                        </a>#}
-{#                        <div class="blog-box">#}
-{#                            <div class="blog-time text-center badge-success m-2" style="border-radius: 10px">Feb. 14,#}
-{#                                2022#}
-{#                            </div>#}
-{#                            <h5 class="Blog-title mb-0 text-center"><a href="#">Django Instagram Clone</a></h5>#}
-{#                            <div align="center">#}
-{##}
-{##}
-{#                                <span class="badge badge-danger">Python</span>#}
-{##}
-{##}
-{#                                <span class="badge badge-primary">Django</span>#}
-{##}
-{##}
-{#                                <span class="badge badge-warning">Rest Framework</span>#}
-{##}
-{##}
-{#                                <span class="badge badge-success">React Native</span>#}
-{##}
-{##}
-{#                                <span class="badge badge-info">PostgreSQL</span>#}
-{##}
-{##}
-{#                            </div>#}
-{#                            <p class="mb-0 text-center">Instagram Clone Mobile Application that we developed using#}
-{#                                Django Rest Framework and React Native</p>#}
-{#                            <div class="blog-link">#}
-{#                            </div>#}
-{#                        </div>#}
-{#                        <div align="center">#}
-{#                            <a href="projects/django-instagram-clone/index.html" class="btn btn-outline-danger mt-3">Details</a>#}
-{#                        </div>#}
-{#                    </div>#}
-{#                </div>#}
-{##}
-{#                <div class="col-md-6 col-lg-4 infinite-item">#}
-{#                    <div class="blog-item" style="max-height: 530px;min-height: 530px">#}
-{#                        <a href="projects/django-e-trade-web-app/index.html">#}
-{#                            <div class="image-blog">#}
-{#                                <img src="https://brktrl.s3.eu-central-1.amazonaws.com/projects/Django+E+TRADE+SYSTEM+(2).png"#}
-{#                                     alt="/">#}
-{#                            </div>#}
-{#                        </a>#}
-{#                        <div class="blog-box">#}
-{#                            <div class="blog-time text-center badge-success m-2" style="border-radius: 10px">March 13,#}
-{#                                2022#}
-{#                            </div>#}
-{#                            <h5 class="Blog-title mb-0 text-center"><a href="#">Django E-Commerce System - 2</a></h5>#}
-{#                            <div align="center">#}
-{##}
-{##}
-{#                                <span class="badge badge-danger">Python</span>#}
-{##}
-{##}
-{#                                <span class="badge badge-primary">Django</span>#}
-{##}
-{##}
-{#                                <span class="badge badge-warning">PostgreSQL</span>#}
-{##}
-{##}
-{#                            </div>#}
-{#                            <p class="mb-0 text-center">A comprehensive e-commerce system project developed using Python#}
-{#                                Django Framework.</p>#}
-{#                            <div class="blog-link">#}
-{#                            </div>#}
-{#                        </div>#}
-{#                        <div align="center">#}
-{#                            <a href="projects/django-e-trade-web-app/index.html" class="btn btn-outline-danger mt-3">Details</a>#}
-{#                        </div>#}
-{#                    </div>#}
-{#                </div>#}
-
             </div>
         </div>
         <div class="container">
@@ -523,181 +445,126 @@
                     <div class="title-box-03">
                         <h2 class="title-header">Sertifikatlar</h2>
                         <p>Men dasturiy ta'minot va kiberxavfsizlik sohasida olgan sertifikatlarim bilan bu yerda
-                            tanishishingiz mumkin.</p>
+                            tanishishingiz mumkin.
+                        </p>
                     </div>
                 </div>
             </div>
             <div class="row mt-4">
 
-                <div class="col-md-6 col-lg-4 infinite-item">
-                    <div class="blog-item" style="max-height: 600px;min-height: 600px">
-                        <a href="certificates/orta-seviye-django-patikasi/index.html">
-                            <div class="image-blog">
-                                <img src="https://brktrl.s3.eu-central-1.amazonaws.com/certificates/Orta+Seviye+Django+ile+Web+Development+Patikası.jpeg"
-                                     alt="/" width="100%" height="240px">
+                {% for i in sertifikat %}
+                    <div class="col-md-6 col-lg-4 infinite-item">
+                        <div class="blog-item" style="max-height: 600px;min-height: 600px">
+                            <a href="#">
+                                <div class="image-blog">
+                                    {% if i.image %}
+                                        <img src="{{ i.image.url }}" alt="/" width="100%" height="240px">
+                                    {% else %}
+                                        <img src="https://marketplace.canva.com/EAFGv9WhSmc/1/0/1600w/canva-blue-and-yellow-minimalist-employee-of-the-month-certificate-jaIc19nYjY4.jpg" alt="/" width="100%" height="240px">
+                                    {% endif %}
+                                </div>
+                            </a>
+                            <div class="blog-box">
+                                <div class="blog-time text-center badge-success m-2" style="border-radius: 10px">
+                                    {{ i.started_at }}
+                                </div>
+                                <h5 class="Blog-title mb-0 text-center"><a href="#">{{ i.name }}</a></h5>
+                                <div align="center">
+                                    <span class="badge badge-danger">{{ i.techno }}</span>
+                                </div>
+                                <p class="mb-0 text-center">{{ i.description | truncatewords:18 }}</p>
+                                <div class="blog-link">
+                                </div>
                             </div>
-                        </a>
-                        <div class="blog-box">
-                            <div class="blog-time text-center badge-success m-2" style="border-radius: 10px">Feb. 22,
-                                2022
-                            </div>
-                            <h5 class="Blog-title mb-0 text-center"><a href="#">Intermediate Django Trail</a></h5>
+                            <div class="blog-time mt-3 text-center">{{ i.company }}</div>
                             <div align="center">
-                                <span class="badge badge-danger">Django</span>
+                                <a href="#"
+                                   class="btn btn-outline-warning mt-3">Tafsilotlar</a>
                             </div>
-                            <p class="mb-0 text-center">I have been awarded this certificate by successfully completing
-                                this training series, which is a comprehensive path from OOP to a…</p>
-                            <div class="blog-link">
-                            </div>
-                        </div>
-                        <div class="blog-time mt-3 text-center">Patika</div>
-                        <div align="center">
-                            <a href="certificates/orta-seviye-django-patikasi/index.html"
-                               class="btn btn-outline-warning mt-3">Details</a>
                         </div>
                     </div>
-                </div>
-
-                <div class="col-md-6 col-lg-4 infinite-item">
-                    <div class="blog-item" style="max-height: 600px;min-height: 600px">
-                        <a href="certificates/django-web-uygulama-teknolojileri/index.html">
-                            <div class="image-blog">
-                                <img src="https://brktrl.s3.eu-central-1.amazonaws.com/certificates/Web+Application+Technologies+and+Django.jpeg"
-                                     alt="/" width="100%" height="240px">
-                            </div>
-                        </a>
-                        <div class="blog-box">
-                            <div class="blog-time text-center badge-success m-2" style="border-radius: 10px">Feb. 27,
-                                2022
-                            </div>
-                            <h5 class="Blog-title mb-0 text-center"><a href="#">Django Web Application Technologies</a>
-                            </h5>
-                            <div align="center">
-                                <span class="badge badge-danger">Django</span>
-                            </div>
-                            <p class="mb-0 text-center">I was successful in homework and exams in the django training
-                                series of the University of Michigan and won this certificate.</p>
-                            <div class="blog-link">
-                            </div>
-                        </div>
-                        <div class="blog-time mt-3 text-center">Michigan University</div>
-                        <div align="center">
-                            <a href="certificates/django-web-uygulama-teknolojileri/index.html"
-                               class="btn btn-outline-warning mt-3">Details</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-6 col-lg-4 infinite-item">
-                    <div class="blog-item" style="max-height: 600px;min-height: 600px">
-                        <a href="certificates/odtu-sizma-testine-giris/index.html">
-                            <div class="image-blog">
-                                <img src="https://brktrl.s3.eu-central-1.amazonaws.com/certificates/sizma+testi+odtü.png"
-                                     alt="/" width="100%" height="240px">
-                            </div>
-                        </a>
-                        <div class="blog-box">
-                            <div class="blog-time text-center badge-success m-2" style="border-radius: 10px">April 14,
-                                2022
-                            </div>
-                            <h5 class="Blog-title mb-0 text-center"><a href="#">Introduction to ODTÜ Penetration
-                                Test</a></h5>
-                            <div align="center">
-                                <span class="badge badge-danger">Cyber Security</span>
-                            </div>
-                            <p class="mb-0 text-center">I was entitled to receive this certificate from ODTÜ by
-                                successfully completing the comprehensive penetration test entrance train…</p>
-                            <div class="blog-link">
-                            </div>
-                        </div>
-                        <div class="blog-time mt-3 text-center">ODTÜ</div>
-                        <div align="center">
-                            <a href="certificates/odtu-sizma-testine-giris/index.html"
-                               class="btn btn-outline-warning mt-3">Details</a>
-                        </div>
-                    </div>
-                </div>
+                {% endfor %}
 
             </div>
         </div>
         <div class="container">
-            <a href="certificates/index.html" class="btn btn-block pill-button-01 mt-5">All My Certificates</a>
+            <a href="certificates/index.html" class="btn btn-block pill-button-01 mt-5">Mening barcha sertifikatlarim</a>
         </div>
     </section>
 
 
-    <section id="galleries" class="blog-01 py-6 bg-grey">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="title-box-03">
-                        <h2 class="title-header">My Training and Seminars</h2>
-                        <p>You can reach the visuals of the trainings and seminars I have given in the field of software
-                            and cyber security.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="row mt-4">
-
-                <div class="col-md-6 col-lg-4 infinite-item">
-                    <div class="blog-item">
-                        <a>
-                            <div class="image-blog">
-                                <img src="https://brktrl.s3.eu-central-1.amazonaws.com/user/17.jpg" alt="/" width="100%"
-                                     height="240px">
-                            </div>
-                        </a>
-                        <div class="blog-box">
-                            <h5 class="Blog-title mb-4 mt-4 text-center"><a class="btn btn-danger">XSS Training</a></h5>
-                            <p class="mb-0 text-center"></p>
-                            <div class="blog-link">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-6 col-lg-4 infinite-item">
-                    <div class="blog-item">
-                        <a>
-                            <div class="image-blog">
-                                <img src="https://brktrl.s3.eu-central-1.amazonaws.com/user/24.jpg" alt="/" width="100%"
-                                     height="240px">
-                            </div>
-                        </a>
-                        <div class="blog-box">
-                            <h5 class="Blog-title mb-4 mt-4 text-center"><a class="btn btn-danger">Database-2
-                                Training</a></h5>
-                            <p class="mb-0 text-center"></p>
-                            <div class="blog-link">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-6 col-lg-4 infinite-item">
-                    <div class="blog-item">
-                        <a>
-                            <div class="image-blog">
-                                <img src="https://brktrl.s3.eu-central-1.amazonaws.com/user/26.jpg" alt="/" width="100%"
-                                     height="240px">
-                            </div>
-                        </a>
-                        <div class="blog-box">
-                            <h5 class="Blog-title mb-4 mt-4 text-center"><a class="btn btn-danger">SQL Injection
-                                Training</a></h5>
-                            <p class="mb-0 text-center"></p>
-                            <div class="blog-link">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-        <div class="container">
-            <a href="seminars/index.html" class="btn btn-block pill-button-01 mt-5">All My Trainings and Seminars</a>
-        </div>
-    </section>
+{#    <section id="galleries" class="blog-01 py-6 bg-grey">#}
+{#        <div class="container">#}
+{#            <div class="row">#}
+{#                <div class="col-lg-12">#}
+{#                    <div class="title-box-03">#}
+{#                        <h2 class="title-header">My Training and Seminars</h2>#}
+{#                        <p>You can reach the visuals of the trainings and seminars I have given in the field of software#}
+{#                            and cyber security.</p>#}
+{#                    </div>#}
+{#                </div>#}
+{#            </div>#}
+{#            <div class="row mt-4">#}
+{##}
+{#                <div class="col-md-6 col-lg-4 infinite-item">#}
+{#                    <div class="blog-item">#}
+{#                        <a>#}
+{#                            <div class="image-blog">#}
+{#                                <img src="https://brktrl.s3.eu-central-1.amazonaws.com/user/17.jpg" alt="/" width="100%"#}
+{#                                     height="240px">#}
+{#                            </div>#}
+{#                        </a>#}
+{#                        <div class="blog-box">#}
+{#                            <h5 class="Blog-title mb-4 mt-4 text-center"><a class="btn btn-danger">XSS Training</a></h5>#}
+{#                            <p class="mb-0 text-center"></p>#}
+{#                            <div class="blog-link">#}
+{#                            </div>#}
+{#                        </div>#}
+{#                    </div>#}
+{#                </div>#}
+{##}
+{#                <div class="col-md-6 col-lg-4 infinite-item">#}
+{#                    <div class="blog-item">#}
+{#                        <a>#}
+{#                            <div class="image-blog">#}
+{#                                <img src="https://brktrl.s3.eu-central-1.amazonaws.com/user/24.jpg" alt="/" width="100%"#}
+{#                                     height="240px">#}
+{#                            </div>#}
+{#                        </a>#}
+{#                        <div class="blog-box">#}
+{#                            <h5 class="Blog-title mb-4 mt-4 text-center"><a class="btn btn-danger">Database-2#}
+{#                                Training</a></h5>#}
+{#                            <p class="mb-0 text-center"></p>#}
+{#                            <div class="blog-link">#}
+{#                            </div>#}
+{#                        </div>#}
+{#                    </div>#}
+{#                </div>#}
+{##}
+{#                <div class="col-md-6 col-lg-4 infinite-item">#}
+{#                    <div class="blog-item">#}
+{#                        <a>#}
+{#                            <div class="image-blog">#}
+{#                                <img src="https://brktrl.s3.eu-central-1.amazonaws.com/user/26.jpg" alt="/" width="100%"#}
+{#                                     height="240px">#}
+{#                            </div>#}
+{#                        </a>#}
+{#                        <div class="blog-box">#}
+{#                            <h5 class="Blog-title mb-4 mt-4 text-center"><a class="btn btn-danger">SQL Injection#}
+{#                                Training</a></h5>#}
+{#                            <p class="mb-0 text-center"></p>#}
+{#                            <div class="blog-link">#}
+{#                            </div>#}
+{#                        </div>#}
+{#                    </div>#}
+{#                </div>#}
+{##}
+{#            </div>#}
+{#        </div>#}
+{#        <div class="container">#}
+{#            <a href="seminars/index.html" class="btn btn-block pill-button-01 mt-5">All My Trainings and Seminars</a>#}
+{#        </div>#}
+{#    </section>#}
 
 
     <section id="blog" class="blog-01 py-6 bg-grey">
@@ -707,7 +574,8 @@
                     <div class="title-box-03">
                         <h2 class="title-header">Maqolalar</h2>
                         <p>Dasturiy ta'minot va kiberxavfsizlik sohasida yozgan maqolalarimga shu yerda kirishingiz
-                            mumkin.</p>
+                            mumkin.
+                        </p>
                     </div>
                 </div>
             </div>
@@ -846,7 +714,7 @@
                         <div class="col-lg-12">
                             <div class="info-box">
                                 <div class="item-icon">
-                                    <img src="../static/assets/img/message.svg" alt="/">
+                                    <img src="{% static 'assets/img/message.svg' %}" alt="/">
                                 </div>
                                 <div class="info-text">
                                     <h5 class=" mb-0">Mail bilan xabar qoldirish</h5>
@@ -857,7 +725,7 @@
                         <div class="col-lg-12">
                             <div class="info-box">
                                 <div class="item-icon">
-                                    <img src="../static/assets/img/linkedin.svg" alt="/">
+                                    <img src="{% static 'assets/img/linkedin.svg' %}" alt="/">
                                 </div>
                                 <div class="info-text">
                                     <h5 class="mb-0">Linkedin</h5>
