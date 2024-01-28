@@ -5,7 +5,7 @@ from loyiha.models import Texnologiyalar
 class Sertifikat(models.Model):
     name = models.CharField(verbose_name='Sertifikat nomi: ', max_length=200, blank=False, null=False)
     description = models.TextField(verbose_name="Qisqa izoh: ", blank=False, null=False)
-    techno = models.OneToOneField(
+    techno = models.ForeignKey(
         Texnologiyalar,
         verbose_name="Texnologiyalar",
         blank=False,
@@ -17,7 +17,11 @@ class Sertifikat(models.Model):
     started_at = models.DateField(verbose_name='Boshlanish vaqti: ', null=False, blank=False)
     ended_at = models.DateField(verbose_name='Tugash vaqti: ', blank=True, null=True)
     link = models.URLField(verbose_name="Sertifikat linki: ", null=True, blank=True)
-    tag = models.ManyToManyField(Texnologiyalar, verbose_name='Teglar', null=False, blank=False)
+    tag = models.ManyToManyField(
+        Texnologiyalar,
+        verbose_name='Teglar',
+        related_name='tags'
+    )
     is_active = models.BooleanField(verbose_name='Faol yoki nofaollik: ', default=False)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
