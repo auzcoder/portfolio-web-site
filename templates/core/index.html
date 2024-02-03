@@ -581,77 +581,34 @@
             </div>
             <div class="row mt-4">
 
-                <div class="col-md-6 col-lg-4">
-                    <a href="articles/detail/django-admin-honey-pot.html">
-                        <div class="blog-item" style="max-height: 470px;min-height: 470px">
-                            <div class="image-blog">
-                                <img src="https://brktrl.s3.eu-central-1.amazonaws.com/includes/pythondjango.jpg"
-                                     alt="/" style="max-height: 200px">
-                            </div>
-                            <div class="blog-box">
-                                <h5 class="Blog-title text-center">
-                                    <a href="articles/detail/django-admin-honey-pot.html"
-                                       class="btn btn-info btn-block font-weight-light">Django Admin  -  Honey Pot</a>
-                                </h5>
-                                <p class="mb-0 text-center">Djangoda admin Before saying what is Honeypot, let&#x27;s
-                                    talk about what Honey Pot is in general.
-                                </p>
-                                <div class="blog-link text-center">
-                                    <a class="text-center" href="articles/detail/django-admin-honey-pot.html"
-                                       target="_blank">More...</a>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
+                {% for i in maqola %}
 
-                <div class="col-md-6 col-lg-4">
-                    <a href="articles/detail/django-ratelimit.html">
-                        <div class="blog-item" style="max-height: 470px;min-height: 470px">
-                            <div class="image-blog">
-                                <img src="https://brktrl.s3.eu-central-1.amazonaws.com/includes/pythondjango.jpg"
-                                     alt="/" style="max-height: 200px">
-                            </div>
-                            <div class="blog-box">
-                                <h5 class="Blog-title text-center">
-                                    <a href="articles/detail/django-ratelimit.html"
-                                       class="btn btn-info btn-block font-weight-light">Django Ratelimit</a>
-                                </h5>
-                                <p class="mb-0 text-center">What is ratelimit in Django and how to use it, in this
-                                    article I will talk about it. Let&#x27;s consider this first.
-                                </p>
-                                <div class="blog-link text-center">
-                                    <a class="text-center" href="articles/detail/django-ratelimit.html" target="_blank">More...</a>
+                    <div class="col-md-6 col-lg-4">
+                        <a href="#">
+                            <div class="blog-item" style="max-height: 470px;min-height: 470px">
+                                <div class="image-blog">
+                                    <img src="{{ i.image.url }}"
+                                         alt="/" style="max-height: 200px">
+                                </div>
+                                <div class="blog-box">
+                                    <h5 class="Blog-title text-center">
+                                        <a href="#"
+                                           class="btn btn-info btn-block font-weight-light">{{ i.name }}</a>
+                                    </h5>
+                                    <p class="mb-0 text-center">
+                                        {{ i.description }}
+                                    </p>
+                                    <div class="blog-link text-center">
+                                    </div>
+                                </div>
+                                <div align="center">
+                                    <a href="#" class="btn btn-outline-danger mt-3">Batafsil</a>
                                 </div>
                             </div>
-                        </div>
-                    </a>
-                </div>
+                        </a>
+                    </div>
 
-                <div class="col-md-6 col-lg-4">
-                    <a href="articles/detail/django-multilanguage.html">
-                        <div class="blog-item" style="max-height: 470px;min-height: 470px">
-                            <div class="image-blog">
-                                <img src="https://brktrl.s3.eu-central-1.amazonaws.com/includes/pythondjango.jpg"
-                                     alt="/" style="max-height: 200px">
-                            </div>
-                            <div class="blog-box">
-                                <h5 class="Blog-title text-center">
-                                    <a href="articles/detail/django-multilanguage.html"
-                                       class="btn btn-info btn-block font-weight-light">Django Multilanguage</a>
-                                </h5>
-                                <p class="mb-0 text-center">In this article, we will talk about translating static data
-                                    into different languages ​​in django. In our next article, we will also translate
-                                    our Djano Models into different langu…
-                                </p>
-                                <div class="blog-link text-center">
-                                    <a class="text-center" href="articles/detail/django-multilanguage.html"
-                                       target="_blank">More...</a>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
+                {% endfor %}
 
             </div>
         </div>
