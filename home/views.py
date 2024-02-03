@@ -9,6 +9,7 @@ from tajriba.models import Tajriba
 from talim.models import Talim
 from loyiha.models import Loyiha
 from sertifikat.models import Sertifikat
+from maqola.models import Maqola
 
 
 def set_language(request, language):
@@ -36,12 +37,14 @@ def homepage(request):
     talim = Talim.objects.all().order_by('-created_at' and 'ended_at')
     loyiha = Loyiha.objects.all().order_by('-created_at')[:3]
     sertifikat = Sertifikat.objects.filter(is_active=True).order_by('-created_at')[:3]
+    maqola = Maqola.objects.filter(is_active=True).order_by('-created_at')[:3]
 
     context = {
         'tajriba': tajriba,
         'talim': talim,
         'loyiha': loyiha,
         'sertifikat': sertifikat,
+        'maqola': maqola,
     }
 
     return render(request, 'core/index.html', context)
