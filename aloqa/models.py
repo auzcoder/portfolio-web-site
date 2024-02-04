@@ -26,6 +26,16 @@ class SocialMedia(models.Model):
     link = models.URLField(verbose_name='Havola: ', null=True, blank=True)
     color = ColorField(verbose_name="Media rangi: ", default='#007bff')
 
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        ordering = ['-created_at']
+        verbose_name_plural = 'Ijtimoiiy medialar: '
+
+    def __str__(self):
+        return self.name
+
 
 class About(models.Model):
     fullname = models.CharField(verbose_name='F.I.O: ', max_length=240, null=False, blank=False)
@@ -36,6 +46,10 @@ class About(models.Model):
         Texnologiyalar,
         verbose_name="Ko'nikmalarim: ",
 
+    )
+    social = models.ManyToManyField(
+        SocialMedia,
+        verbose_name="Ijtimoiy tarmoqlarim: ",
     )
     image = models.ImageField(
         verbose_name='Bosh sahifa rasmi: ',
@@ -52,7 +66,7 @@ class About(models.Model):
         default='assets/me.jpg',
     )
     content = tinymce_models.HTMLField(verbose_name="Bosh sahifa ma'lumotlar: ", blank=False, null=False)
-    content2 = tinymce_models.HTMLField(verbose_name="Barcha ma'lumotlar: ", blank=False, null=False)
+    biography = tinymce_models.HTMLField(verbose_name="Barcha ma'lumotlar: ", blank=False, null=False)
     resume = models.FileField(
         verbose_name="Rezyume: ",
         upload_to="resume/",
@@ -63,4 +77,9 @@ class About(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
+    class Meta:
+        ordering = ['-created_at']
+        verbose_name_plural = 'Rezyume: '
 
+    def __str__(self):
+        return self.fullname
