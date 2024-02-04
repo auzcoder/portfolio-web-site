@@ -21,3 +21,7 @@ class About(models.Model):
     fullname = models.CharField(max_length=240, null=False, blank=False)
     position = models.CharField(max_length=240, null=False, blank=False)
     manzil = models.CharField(max_length=240, null=False, blank=False)
+    email = models.EmailField(max_length=240, null=False, blank=False)
+    
+
+
