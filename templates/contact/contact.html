@@ -51,14 +51,14 @@
                                 <div class="row">
                                     <div class="col-lg-6 form-item">
                                         <div class="form-group">
-                                            <input name="firstname" id="name" type="text" class="form-control"
+                                            <input name="firstname" id="firstname" type="text" class="form-control"
                                                    placeholder="Ismingiz" aria-label="" required>
 
                                         </div>
                                     </div>
                                     <div class="col-lg-6 form-item">
                                         <div class="form-group">
-                                            <input name="lastname" id="family" type="text" class="form-control"
+                                            <input name="lastname" id="lastname" type="text" class="form-control"
                                                    placeholder="Familyangiz" aria-label="" required>
 
                                         </div>
@@ -74,7 +74,7 @@
 
                                     <div class="col-12 form-item">
                                         <div class="form-group">
-                                        <textarea name="message" id="comments"
+                                        <textarea name="message" id="message"
                                                   rows="4" class="form-control textarea"
                                                   placeholder="Xabaringiz..." aria-label="">
                                         </textarea>
@@ -115,10 +115,10 @@
                 url: '{% url "contact" %}',  // URL'ni Django URL nomi bilan almashtiring
                 data: {
                     csrfmiddlewaretoken: $('input[name=csrfmiddlewaretoken]').val(),
-                    firstname: $('#name').val(),
-                    lastname: $('#family').val(),
+                    firstname: $('#firstname').val(),
+                    lastname: $('#lastname').val(),
                     email: $('#email').val(),
-                    message: $('#comments').val()
+                    message: $('#message').val()
                 },
 
                 success: function (response) {
