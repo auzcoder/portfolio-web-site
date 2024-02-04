@@ -1,8 +1,9 @@
-from django.shortcuts import render, redirect
 from aloqa.forms import ContactForm
+from django.http import JsonResponse
+from django.shortcuts import render, redirect
 from django.contrib import messages
 
-from django.http import JsonResponse
+
 # def contact_views(request):
 #     if request.method == 'POST':
 #         print(request.POST)
