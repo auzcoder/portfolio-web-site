@@ -1,5 +1,6 @@
 from django.db import models
 from tinymce import models as tinymce_models
+from loyiha.models import Texnologiyalar
 
 
 class Contact(models.Model):
@@ -23,6 +24,11 @@ class About(models.Model):
     position = models.CharField(verbose_name='Lavozim: ', max_length=240, null=False, blank=False)
     manzil = models.CharField(verbose_name='Manzil: ', max_length=240, null=False, blank=False)
     email = models.EmailField(verbose_name='Email: ', max_length=240, null=False, blank=False)
+    skill = models.ManyToManyField(
+        Texnologiyalar,
+        verbose_name="Ko'nikmalarim: ",
+
+    )
     image = models.ImageField(
         verbose_name='Bosh sahifa rasmi: ',
         null=False,
@@ -39,5 +45,9 @@ class About(models.Model):
     )
     content = tinymce_models.HTMLField(verbose_name="Bosh sahifa ma'lumotlar: ", blank=False, null=False)
     content2 = tinymce_models.HTMLField(verbose_name="Barcha ma'lumotlar: ", blank=False, null=False)
+    resume = models.FileField(verbose_name="Rezyume: ", )
+
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
 
 
