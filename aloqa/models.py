@@ -15,3 +15,9 @@ class Contact(models.Model):
 
     def __str__(self):
         return self.firstname
+
+
+class About(models.Model):
+    fullname = models.CharField(max_length=240, null=False, blank=False)
+    position = models.CharField(max_length=240, null=False, blank=False)
+    manzil = models.CharField(max_length=240, null=False, blank=False)
