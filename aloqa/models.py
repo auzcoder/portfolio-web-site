@@ -1,4 +1,5 @@
 from django.db import models
+from tinymce import models as tinymce_models
 
 
 class Contact(models.Model):
@@ -18,11 +19,24 @@ class Contact(models.Model):
 
 
 class About(models.Model):
-    fullname = models.CharField(max_length=240, null=False, blank=False)
-    position = models.CharField(max_length=240, null=False, blank=False)
-    manzil = models.CharField(max_length=240, null=False, blank=False)
-    email = models.EmailField(max_length=240, null=False, blank=False)
-    image = models.ImageField(null=False, blank=False, upload_to='About/', default='assets/me.jpg')
-    image2 = models.ImageField(null=False, blank=False, upload_to='About/', default='assets/me.jpg')
+    fullname = models.CharField(verbose_name='F.I.O: ', max_length=240, null=False, blank=False)
+    position = models.CharField(verbose_name='Lavozim: ', max_length=240, null=False, blank=False)
+    manzil = models.CharField(verbose_name='Manzil: ', max_length=240, null=False, blank=False)
+    email = models.EmailField(verbose_name='Email: ', max_length=240, null=False, blank=False)
+    image = models.ImageField(
+        verbose_name='Bosh sahifa rasmi: ',
+        null=False,
+        blank=False,
+        upload_to='About/',
+        default='assets/me.jpg',
+    )
+    image2 = models.ImageField(
+        verbose_name='Men haqimda rasm: ',
+        null=False,
+        blank=False,
+        upload_to='About/',
+        default='assets/me.jpg',
+    )
+    content = tinymce_models.HTMLField(verbose_name="Barcha ma'lumotlar: ", blank=False, null=False)
 
 
