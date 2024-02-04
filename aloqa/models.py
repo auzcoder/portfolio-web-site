@@ -1,6 +1,7 @@
 from django.db import models
 from tinymce import models as tinymce_models
 from loyiha.models import Texnologiyalar
+from colorfield.fields import ColorField
 
 
 class Contact(models.Model):
@@ -17,6 +18,13 @@ class Contact(models.Model):
 
     def __str__(self):
         return self.firstname
+
+
+class SocialMedia(models.Model):
+    name = models.CharField(verbose_name="Tarmoq nomi: ", max_length=200, null=False, blank=False)
+    icon = models.CharField(verbose_name="Icon kodi: ", max_length=100, null=False, blank=False)
+    link = models.URLField(verbose_name='Havola: ', null=True, blank=True)
+    color = ColorField(verbose_name="Media rangi: ", default='#007bff')
 
 
 class About(models.Model):
@@ -45,7 +53,12 @@ class About(models.Model):
     )
     content = tinymce_models.HTMLField(verbose_name="Bosh sahifa ma'lumotlar: ", blank=False, null=False)
     content2 = tinymce_models.HTMLField(verbose_name="Barcha ma'lumotlar: ", blank=False, null=False)
-    resume = models.FileField(verbose_name="Rezyume: ", )
+    resume = models.FileField(
+        verbose_name="Rezyume: ",
+        upload_to="resume/",
+        null=True,
+        blank=True
+    )
 
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
