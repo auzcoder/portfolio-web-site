@@ -31,12 +31,13 @@ class About(models.Model):
         default='assets/me.jpg',
     )
     image2 = models.ImageField(
-        verbose_name='Men haqimda rasm: ',
+        verbose_name='Men haqimdagi rasm: ',
         null=False,
         blank=False,
         upload_to='About/',
         default='assets/me.jpg',
     )
-    content = tinymce_models.HTMLField(verbose_name="Barcha ma'lumotlar: ", blank=False, null=False)
+    content = tinymce_models.HTMLField(verbose_name="Bosh sahifa ma'lumotlar: ", blank=False, null=False)
+    content2 = tinymce_models.HTMLField(verbose_name="Barcha ma'lumotlar: ", blank=False, null=False)
 
 
