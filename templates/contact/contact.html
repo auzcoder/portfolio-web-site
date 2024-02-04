@@ -78,7 +78,7 @@
                                     </div>
                                     <div class="col-sm-12 text-left">
                                         <button type="submit" class="btn pill-button-01" id="submit-btn"
-                                                onclick="sendEmail()">Yuborish
+                                                onclick="sendsEmail()">Yuborish
                                         </button>
                                         <div id="message" class="toast" role="alert" aria-live="assertive"
                                              aria-atomic="true" data-delay="4000">
@@ -94,8 +94,38 @@
                         </div>
                     </div>
                 </div>
+{#                <form id="contactForm" method="post" action="">#}
+{#                    {% csrf_token %}#}
+{#                    {{ form.as_p }}#}
+{#                    <button type="submit">Submit</button>#}
+{#                </form>#}
+
+                <div id="formResponse"></div>
             </div>
         </div>
     </section>
+
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#contactForm').submit(function (e) {
+                e.preventDefault();
+                $.ajax({
+                    type: 'POST',
+                    url: '/contact/',  // URL'ni shu yerga qo'ying
+                    data: $(this).serialize(),
+                    success: function (response) {
+                        $('#formResponse').html("<p>Message sent successfully!</p>");
+                    },
+                    error: function (response) {
+                        $('#formResponse').html("<p>Error occurred.</p>");
+                    }
+                });
+            });
+        });
+    </script>
+
 
 {% endblock contact %}

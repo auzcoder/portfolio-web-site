@@ -3,5 +3,5 @@ from aloqa.views import contact_views
 
 
 urlpatterns = [
-    path('contact/', contact_views, name='contact'),
+    path('', contact_views, name='contact'),
 ]
