@@ -23,9 +23,9 @@ from django.http import JsonResponse
 
 
 def contact_views(request):
-    if request.method == 'POST' and request.is_ajax():
+    if request.method == 'POST':
         form = ContactForm(request.POST)
-        print(form)
+        print(request.POST)
         if form.is_valid():
             form.save()
             return JsonResponse({"success": True}, status=200)
