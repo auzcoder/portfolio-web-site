@@ -77,12 +77,13 @@
             <div class="hero-content">
 
                 <div class="row">
-                    <div class=" col-lg-4">
-                        <div class="personal-img">
-                            <img src="static/auzcoder/me.jpg" style="max-width: 100%;width:500px" alt="/">
-                        </div>
-                    </div>
                     {% for i in about %}
+                        <div class=" col-lg-4">
+                            <div class="personal-img">
+                                <img src="{{ i.image.url }}" style="max-width: 100%;width:500px" alt="/">
+                            </div>
+                        </div>
+
                         <div class="col-lg-8 personal-item">
                             <h1 class="mb-3">{{ i.fullname }}</h1>
                             <h2>{{ i.position }}</h2>
@@ -114,42 +115,6 @@
                                 </div>
                             </div>
                         </div>
-{#                        <div class="col-lg-8 personal-item">#}
-{#                            <h1 class="mb-3">Abdulhafiz Davlatov</h1>#}
-{#                            <h2>Full stack Python Developer</h2>#}
-{#                            <div class="row">#}
-{#                                <div class="col-6 col-lg-5 personal-info">#}
-{#                                    <ul class="list-unstyled">#}
-{#                                        <li>Manzil :#}
-{#                                            <small> Namangan / Uzbekistan</small>#}
-{#                                        </li>#}
-{#                                    </ul>#}
-{#                                </div>#}
-{#                                <div class="col-6 col-lg-5 personal-info">#}
-{#                                    <ul class="list-unstyled">#}
-{#                                        <li>Email : <small>auz.offical@gmail.com</small></li>#}
-{#                                    </ul>#}
-{#                                </div>#}
-{#                                <div class="col-lg-12">#}
-{#                                    <div class="social-icon">#}
-{#                                        <ul class="list-inline py-2 mb-0">#}
-{##}
-{#                                            <li class="list-inline-item">#}
-{#                                                <a href="https://github.com/auzcoder" target="_blank">#}
-{#                                                    <img src="{% static 'assets/img/github.svg' %}" alt="/">#}
-{#                                                </a>#}
-{#                                            </li>#}
-{#                                            <li class="list-inline-item">#}
-{#                                                <a href="https://www.linkedin.com/in/auzcoder/" target="_blank">#}
-{#                                                    <img src="{% static 'assets/img/linkedin.svg' %}" alt="/">#}
-{#                                                </a>#}
-{#                                            </li>#}
-{##}
-{#                                        </ul>#}
-{#                                    </div>#}
-{#                                </div>#}
-{#                            </div>#}
-{#                        </div>#}
                     {% endfor %}
                 </div>
             </div>
