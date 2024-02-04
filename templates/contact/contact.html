@@ -81,7 +81,6 @@
 
                                         </div>
                                     </div>
-                                    <input type="hidden" name="csrfmiddlewaretoken" value="{{ csrf_token }}">
 
                                     <div class="col-sm-12 text-left">
                                         <button type="submit" class="btn pill-button-01" id="submit-btn"
@@ -101,13 +100,6 @@
                         </div>
                     </div>
                 </div>
-{#                <form id="contactForm" method="post" action="">#}
-{#                    {% csrf_token %}#}
-{#                    {{ form.as_p }}#}
-{#                    <button type="submit">Submit</button>#}
-{#                </form>#}
-
-                <div id="formResponse"></div>
             </div>
         </div>
     </section>
@@ -151,48 +143,6 @@
             });
         }
     </script>
-{#    <script type="text/javascript">#}
-{#        // CSRF token'ni cookie'dan olish uchun yordamchi funksiya#}
-{#        function getCookie(name) {#}
-{#            let cookieValue = null;#}
-{#            if (document.cookie && document.cookie !== '') {#}
-{#                const cookies = document.cookie.split(';');#}
-{#                for (let i = 0; i < cookies.length; i++) {#}
-{#                    const cookie = jQuery.trim(cookies[i]);#}
-{#                    if (cookie.substring(0, name.length + 1) === (name + '=')) {#}
-{#                        cookieValue = decodeURIComponent(cookie.substring(name.length + 1));#}
-{#                        break;#}
-{#                    }#}
-{#                }#}
-{#            }#}
-{#            return cookieValue;#}
-{#        }#}
-{##}
-{#        function sendsEmail() {#}
-{#            event.preventDefault();  // Formani odatiy submit qilishini to'xtatish#}
-{#            const csrftoken = getCookie('csrftoken');  // CSRF token'ni olish#}
-{##}
-{#            $.ajax({#}
-{#                type: 'POST',#}
-{#                url: '{% url "contact" %}',  // URL'ni Django URL nomi bilan almashtiring#}
-{#                data: {#}
-{#                    csrfmiddlewaretoken: csrftoken,  // CSRF token'ni qo'shish#}
-{#                    firstname: $('#name').val(),#}
-{#                    lastname: $('#family').val(),#}
-{#                    email: $('#email').val(),#}
-{#                    message: $('#comments').val()#}
-{#                },#}
-{#                success: function (response) {#}
-{#                    $('#message .toast-body').html("<p>Message sent successfully!</p>");#}
-{#                    $('#message').toast('show');  // Toast bildirishnomani ko'rsatish#}
-{#                },#}
-{#                error: function (response) {#}
-{#                    $('#message .toast-body').html("<p>Error occurred.</p>");#}
-{#                    $('#message').toast('show');  // Toast bildirishnomani ko'rsatish#}
-{#                }#}
-{#            });#}
-{#        }#}
-{#    </script>#}
 
 
 {% endblock contact %}
