@@ -96,24 +96,19 @@
                                 </div>
                                 <div class="col-6 col-lg-5 personal-info">
                                     <ul class="list-unstyled">
-                                        <li>Email : <small>auz.offical@gmail.com</small></li>
+                                        <li>Email : <small>{{ i.email }}</small></li>
                                     </ul>
                                 </div>
                                 <div class="col-lg-12">
                                     <div class="social-icon">
                                         <ul class="list-inline py-2 mb-0">
-
-                                            <li class="list-inline-item">
-                                                <a href="https://github.com/auzcoder" target="_blank">
-                                                    <img src="{% static 'assets/img/github.svg' %}" alt="/">
-                                                </a>
-                                            </li>
-                                            <li class="list-inline-item">
-                                                <a href="https://www.linkedin.com/in/auzcoder/" target="_blank">
-                                                    <img src="{% static 'assets/img/linkedin.svg' %}" alt="/">
-                                                </a>
-                                            </li>
-
+                                            {% for a in i.social.all %}
+                                                <li class="list-inline-item">
+                                                    <a href="https://github.com/auzcoder" target="_blank">
+                                                        {{ a.icon | safe }}
+                                                    </a>
+                                                </li>
+                                            {% endfor %}
                                         </ul>
                                     </div>
                                 </div>
