@@ -6,3 +6,12 @@ class Contact(models.Model):
     lastname = models.CharField(max_length=200, null=False, blank=False)
     email = models.EmailField(max_length=200, null=False, blank=False)
     message = models.TextField(max_length=1500, null=False, blank=False)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        ordering = ['-created_at']
+        verbose_name_plural = 'Aloqalar'
+
+    def __str__(self):
+        return self.firstname

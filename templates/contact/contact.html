@@ -41,18 +41,19 @@
                 <div class="col-md-8">
                     <div class="contact-box">
                         <div class="contact-form">
-                            <form id="contactForm" action="https://berkaysen.me/en/contact/" method="post">
+                            <form id="contactForm" action="{% url 'home' %}" method="post">
+                                {% csrf_token %}
                                 <div class="row">
                                     <div class="col-lg-6 form-item">
                                         <div class="form-group">
-                                            <input name="first_name" id="name" type="text" class="form-control"
+                                            <input name="firstname" id="name" type="text" class="form-control"
                                                    placeholder="Ismingiz" aria-label="" required>
 
                                         </div>
                                     </div>
                                     <div class="col-lg-6 form-item">
                                         <div class="form-group">
-                                            <input name="last_name" id="family" type="text" class="form-control"
+                                            <input name="lastname" id="family" type="text" class="form-control"
                                                    placeholder="Familyangiz" aria-label="" required>
 
                                         </div>

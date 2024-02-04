@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'loyiha',
     'sertifikat',
     'maqola',
+    'aloqa',
 
     'tinymce',
     'colorfield',

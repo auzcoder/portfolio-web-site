@@ -11,7 +11,7 @@ urlpatterns = [
     path("language/<str:language>", set_language, name="set-language"),
     path('', include('home.urls')),
     path('tinymce/', include('tinymce.urls')),
-
+    path('contact/', include('aloqa.urls')),
 ]
 
 
