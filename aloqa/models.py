@@ -22,6 +22,7 @@ class About(models.Model):
     position = models.CharField(max_length=240, null=False, blank=False)
     manzil = models.CharField(max_length=240, null=False, blank=False)
     email = models.EmailField(max_length=240, null=False, blank=False)
-    image = models.ImageField(null=False, blank=False, upload_to='About/')
+    image = models.ImageField(null=False, blank=False, upload_to='About/', default='assets/me.jpg')
+    image2 = models.ImageField(null=False, blank=False, upload_to='About/', default='assets/me.jpg')
 
 
