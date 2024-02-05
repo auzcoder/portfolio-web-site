@@ -12,6 +12,7 @@ urlpatterns = [
     path('', include('home.urls')),
     path('tinymce/', include('tinymce.urls')),
     path('contact/', include('aloqa.urls')),
+    path('project/', include('loyiha.urls'))
 ]
 
 

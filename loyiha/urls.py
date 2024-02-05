@@ -1,6 +1,6 @@
-from django.contrib import admin
 from django.urls import path
+from loyiha.views import ProjectList
 
 urlpatterns = [
-    # path('admin/', admin.site.urls),
+    path('', ProjectList, name='projects'),
 ]
