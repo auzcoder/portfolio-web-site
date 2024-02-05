@@ -1,111 +1,8 @@
 {% extends 'core/base.html' %}
 {% load static %}
-
-{##}
-
+{% block title %}Loyihalarim{% endblock title %}
 
 
-
-
-{#<!doctype html>#}
-{#<html lang="tr">#}
-{##}
-{#<!-- Mirrored from berkaysen.me/projeler/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 22 Jan 2024 08:38:09 GMT -->#}
-{#<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->#}
-{#<head>#}
-{#      <meta charset="UTF-8">#}
-{#      <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">#}
-{#       <meta http-equiv="X-UA-Compatible" content="ie=edge">#}
-{#       <meta name="author" content="Berkay Şen">#}
-{#       <meta name="publisher" content="Berkay Şen">#}
-{#       <meta name="description" content="Berkay Şen , Berkay Şen Kimdir? , Berkay , brktrl">#}
-{#      <link rel="shortcut icon" href="../static/assets/img/favicon.ico">#}
-{#      <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;700&amp;display=swap" rel="stylesheet">#}
-{#      <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,500;0,600;1,300&amp;display=swap" rel="stylesheet">#}
-{#      <link rel="stylesheet" href="../static/assets/css/bootstrap.css">#}
-{#      <link rel="stylesheet" href="../static/assets/css/fontawesome.css">#}
-{#      <link rel="stylesheet" href="../static/assets/css/LineIcons.css">#}
-{#      <link rel="stylesheet" href="../static/assets/css/owl.carousel.min.css">#}
-{#      <link rel="stylesheet" href="../static/assets/css/magnific-popup.css">#}
-{#      <link rel="stylesheet" href="../static/assets/css/main.css">#}
-{#      <link rel="stylesheet" href="../static/assets/css/color/sky-blue.css" id="option-color-two">#}
-{#      <link rel="stylesheet" href="../static/assets/css/colorfull.css">#}
-{#      <title>Projelerim</title>#}
-{##}
-{##}
-{##}
-{#   </head>#}
-{#   <body>#}
-{##}
-{#<div data-spy="scroll" data-target="#scrollspy" data-offset="61" class="blog-pages westin-dark">#}
-{##}
-{#<header id="header" class="header fixed-top">#}
-{#   <nav id="scrollspy" class="navbar navbar-expand-lg header-nav">#}
-{#      <div class="container">#}
-{#         <a class="navbar-brand base-color" href="../index.html">Berkay Şen</a>#}
-{#         <button class="navbar-toggler collapsed " type="button" data-toggle="collapse" data-target="#toggle-menu"#}
-{#            aria-controls="toggle-menu" aria-expanded="false" aria-label="Toggle navigation">#}
-{#         <span class="lni lni-menu"></span>#}
-{#         </button>#}
-{#         <div class="collapse navbar-collapse" id="toggle-menu">#}
-{#            <ul class="navbar-nav nav-pills ml-auto">#}
-{#               <li class="nav-item">#}
-{#                  <a class="nav-link "#}
-{#                     href="../index.html">Ana Sayfa</a>#}
-{#               </li>#}
-{#               <li class="nav-item">#}
-{#                  <span class="badge badge-pill badge-danger" style="float:right;margin-bottom:-20px;margin-right:-4px;font-size:10px">Yeni </span>#}
-{#                  <a class="nav-link"#}
-{#                     href="../egitim-serilerim/index.html">Derslerim</a>#}
-{#               </li>#}
-{#               <li class="nav-item">#}
-{#                  <a class="nav-link active"#}
-{#                     href="index.html">Projelerim</a>#}
-{#               </li>#}
-{#               <li class="nav-item">#}
-{#                  <a class="nav-link "#}
-{#                     href="../makaleler/index.html">Makalelerim</a>#}
-{#               </li>#}
-{#               <li class="nav-item">#}
-{#                  <a class="nav-link "#}
-{#                     href="../sertifikalar/index.html"> Sertifikalarım</a>#}
-{#               </li>#}
-{#               <li class="nav-item">#}
-{#                  <a class="nav-link" href="../seminerler/index.html">Seminerlerim</a>#}
-{#               </li>#}
-{#               <li class="nav-item">#}
-{##}
-{#                  <a class="nav-link" href="../index.html#testimonial">Referanslarım</a>#}
-{##}
-{#               </li>#}
-{#               <li class="nav-item" style="padding: 5px;margin:0;">#}
-{#                  <div class="dropdown">#}
-{#                     <button class="btn btn-secondary btn-sm dropdown-toggle " style="padding: 5px;margin:0;"#}
-{#                        type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"#}
-{#                        aria-expanded="false">#}
-{##}
-{#                     <img src="../static/assets/img/tr_flag.png" alt="tr_flag_image" width="22" height="17"#}
-{#                        loading="lazy"> TR#}
-{##}
-{#                     </button>#}
-{#                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton"#}
-{#                        style="background-color: #181A1B;margin:0;min-width:8rem">#}
-{##}
-{#                        <a class="dropdown-item" style="padding-left: 15px"#}
-{#                           href="../en/index.html"><img src="../static/assets/img/en_flag.png"#}
-{#                           width="22" height="17" alt="en_flag_image"> English</a>#}
-{#                        <a class="dropdown-item" style="padding-left: 15px"#}
-{#                           href="index.html"><img src="../static/assets/img/tr_flag.png"#}
-{#                           width="22" height="17" alt="tr_flag_image"> Turkish</a>#}
-{##}
-{#                     </div>#}
-{#                  </div>#}
-{#               </li>#}
-{#            </ul>#}
-{#         </div>#}
-{#      </div>#}
-{#   </nav>#}
-{#</header>#}
 {% block navbar %}
     {% include 'core/navbar.html' %}
 {% endblock navbar %}
@@ -253,11 +150,6 @@
    </section>
 
    <a class="return-to-top d-inline-block" href="javascript:void(0)"><i class="lni lni-arrow-up"></i></a>
-   <footer class="py-5">
-   <div class="container">
-      <p class="mb-0">Berkay Şen<a class="base-color"></a></p>
-   </div>
-</footer>
 
 {% endblock content %}
 <script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
