@@ -140,11 +140,8 @@
                     </div>
                     <div class="col-lg-6">
                         <div id="skills" class="row d-flex">
-{#                            {% for a in i.skill.all %}#}
-{#                                <span class="badge badge-primary">Django</span>#}
-{#                                <span class="badge" style="background-color: {{ a.color }}">{{ a.name }}</span>#}
-{#                            {% endfor %}<br><br>#}
-                            {% for a in i.skill.all %}
+
+                            {% for a in i.skill.all|dictsort:"id" %}
                                 <div class="col-lg-6 skill-box">
                                     <div class="skillbar clearfix" data-percent="100%">
                                         <div class="skillbar-title"><span>{{ a.name }}</span></div>
@@ -154,56 +151,6 @@
                                     </div>
                                 </div>
                             {% endfor %}
-
-{#                            <div class="col-lg-6 skill-box">#}
-{#                                <div class="skillbar clearfix" data-percent="100%">#}
-{#                                    <div class="skillbar-title"><span>Django</span></div>#}
-{#                                    <div class="skillbar-bar"></div>#}
-{#                                    <div class="skill-bar">#}
-{##}
-{#                                    </div>#}
-{#                                </div>#}
-{#                            </div>#}
-{##}
-{#                            <div class="col-lg-6 skill-box">#}
-{#                                <div class="skillbar clearfix" data-percent="100%">#}
-{#                                    <div class="skillbar-title"><span>Django Rest Framework</span></div>#}
-{#                                    <div class="skillbar-bar"></div>#}
-{#                                    <div class="skill-bar">#}
-{##}
-{#                                    </div>#}
-{#                                </div>#}
-{#                            </div>#}
-{##}
-{#                            <div class="col-lg-6 skill-box">#}
-{#                                <div class="skillbar clearfix" data-percent="100%">#}
-{#                                    <div class="skillbar-title"><span>PostgreSQL and Sql</span></div>#}
-{#                                    <div class="skillbar-bar"></div>#}
-{#                                    <div class="skill-bar">#}
-{##}
-{#                                    </div>#}
-{#                                </div>#}
-{#                            </div>#}
-{##}
-{#                            <div class="col-lg-6 skill-box">#}
-{#                                <div class="skillbar clearfix" data-percent="100%">#}
-{#                                    <div class="skillbar-title"><span>Linux</span></div>#}
-{#                                    <div class="skillbar-bar"></div>#}
-{#                                    <div class="skill-bar">#}
-{##}
-{#                                    </div>#}
-{#                                </div>#}
-{#                            </div>#}
-{##}
-{#                            <div class="col-lg-6 skill-box">#}
-{#                                <div class="skillbar clearfix" data-percent="100%">#}
-{#                                    <div class="skillbar-title"><span>Vuejs</span></div>#}
-{#                                    <div class="skillbar-bar"></div>#}
-{#                                    <div class="skill-bar">#}
-{##}
-{#                                    </div>#}
-{#                                </div>#}
-{#                            </div>#}
 
                         </div>
                     </div>
@@ -603,26 +550,23 @@
             </div>
             <div class="row mt-5">
                 <div class="col-12">
-                    <div class="owl-carousel">
+                    {% for i in about %}
+                        <div class="owl-carousel">
 
-                        <div class="testimonial-item">
-                            <div class="testimonial-image">
-                                <img src="https://brktrl.s3.eu-central-1.amazonaws.com/references/1649685294360.png"
-                                     alt="/">
+                            <div class="testimonial-item">
+                                <div class="testimonial-image">
+                                    <img src="{{ i.image2.url }}"
+                                         alt="/">
+                                </div>
+                                <div class="testimonial-content">
+                                    <p class="testimonial-comment">{{ i.biography | safe }}</p>
+                                    <h6 class="testimonial-name">{{ i.fullname }}<span class="testimonial-job">{{ i.position }}</span>
+                                    </h6>
+                                </div>
                             </div>
-                            <div class="testimonial-content">
-                                <p class="testimonial-comment">"We are working with Berkay for different development
-                                    processes of Coderspace. He adapted to the project very quickly, works beyond our
-                                    expectations and provides his own contributions to the project. In addition to
-                                    back-end development, thanks to its Cyber ​​Security background, it also shares its
-                                    views and supports in that field."
-                                </p>
-                                <h6 class="testimonial-name">Ahmet Hoşgör<span class="testimonial-job">Co-Founder - Coderspace</span>
-                                </h6>
-                            </div>
+
                         </div>
-
-                    </div>
+                    {% endfor %}
                 </div>
             </div>
         </div>
