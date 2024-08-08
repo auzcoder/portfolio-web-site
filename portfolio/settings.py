@@ -27,8 +27,16 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
+CSRF_TRUSTED_ORIGINS = [
+    'https://test.namdu.uz',
+    'http://0.0.0.0',
+    'http://127.0.0.1',
+    'http://192.168.10.250',
+]
 
-# Application definition
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True
+
 
 INSTALLED_APPS = [
     'jazzmin',
